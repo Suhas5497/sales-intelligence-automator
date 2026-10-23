@@ -1,0 +1,52 @@
+"""CSV / JSON exports of the latest brief per lead (reviewer edits win over the generated draft)."""
+from __future__ import annotations
+
+import csv
+import io
+import json
+
+
+def flatten(row: dict) -> dict:
+    brief = row.get("final") or {}
+    def claim(name):
+        return (brief.get(name) or {}).get("text", "")
+    b2b = brief.get("b2b_qualification") or {}
+    questions = [q.get("question", "") for q in brief.get("discovery_questions") or []] + ["", "", ""]
+    sources = sorted({ev["source_url"] for part in brief.values() if isinstance(part, dict)
+                      for ev in part.get("evidence", []) if isinstance(ev, dict) and ev.get("source_url")})
+    return {
+        "company": row.get("company_name") or row.get("raw_input"),
+        "location": row.get("location", ""),
+        "website": row.get("website", ""),
+        "status": row.get("effective_status", ""),
+        "company_overview": claim("company_overview"),
+        "core_offering": claim("core_offering"),
+        "target_audience": claim("target_audience"),
+        "b2b_decision": b2b.get("decision", ""),
+        "b2b_rationale": b2b.get("rationale", ""),
+        "question_1": questions[0], "question_2": questions[1], "question_3": questions[2],
+        "evidence_urls": " ".join(sources),
+        "validation_issues": " | ".join(f"{i['severity']}: {i['field']}: {i['message']}" for i in row.get("issues") or []),
+        "error": " ".join(filter(None, [row.get("error_code"), row.get("error_message")])),
+        "reviewer_notes": row.get("review_notes") or "",
+        "generated_at": row.get("created_at", ""),
+        "model": row.get("model", ""),
+    }
+
+
+def to_csv(rows: list[dict]) -> str:
+    flat = [flatten(r) for r in rows]
+    if not flat:
+        return ""
+    out = io.StringIO()
+    writer = csv.DictWriter(out, fieldnames=list(flat[0]))
+    writer.writeheader()
+    writer.writerows(flat)
+    return out.getvalue()
+
+
+def to_json(rows: list[dict]) -> str:
+    keep = ("lead_id", "brief_id", "raw_input", "company_name", "location", "website", "status", "review_status",
+            "error_code", "error_message", "draft", "reviewed", "issues", "pages", "candidates", "model",
+            "prompt_version", "created_at", "reviewer", "review_notes", "reviewed_at")
+    return json.dumps([{k: r.get(k) for k in keep} for r in rows], indent=2)
