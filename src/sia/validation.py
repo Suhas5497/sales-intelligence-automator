@@ -29,29 +29,31 @@ def _url_key(url: str) -> str:
 
 class EvidenceChecker:
     def __init__(self, pages: list[Page]):
-        self.pages = {}
+        self.pages = {}                                  # url key -> normalized page text
+        self.sources = []                                # (url to cite, normalized text), one per page
         for page in pages:
             if page.text:
+                text = normalize(page.text)
+                self.sources.append((page.final_url or page.url, text))
                 for url in {page.url, page.final_url} - {""}:
-                    self.pages[_url_key(url)] = normalize(page.text)
-        self.all_text = " ".join(set(self.pages.values()))
+                    self.pages[_url_key(url)] = text
+        self.all_text = " ".join(text for _, text in self.sources)
 
     def check(self, ev: Evidence, field: str) -> tuple[bool, list[Issue]]:
-        """Return (grounded, issues) for one evidence item."""
+        """Return (grounded, issues) for one evidence item.
+
+        A quote must appear word for word on a single fetched page. If it is on a different page than the one
+        cited, the citation is corrected to that page so the brief never links to the wrong source."""
         quote = normalize(ev.quote).strip(" .\"'")
         if len(quote) < MIN_QUOTE_CHARS:
             return False, [Issue(field=field, severity="error", message=f"evidence quote too short: '{ev.quote}'")]
-        page_text = self.pages.get(_url_key(ev.source_url))
-        if page_text is None:
-            if quote in self.all_text:
-                return True, [Issue(field=field, severity="warning",
-                                    message=f"quote found, but cited URL was not fetched: {ev.source_url}")]
-            return False, [Issue(field=field, severity="error",
-                                 message=f"cited URL was not fetched and quote not found: {ev.source_url}")]
-        if quote in page_text:
+        if quote in self.pages.get(_url_key(ev.source_url), ""):
             return True, []
-        if quote in self.all_text:
-            return True, [Issue(field=field, severity="warning", message="quote found on a different page than cited")]
+        for url, text in self.sources:
+            if quote in text:
+                cited, ev.source_url = ev.source_url, url
+                return True, [Issue(field=field, severity="warning",
+                                    message=f"quote was cited to {cited} but found on {url}; citation corrected")]
         return False, [Issue(field=field, severity="error", message=f"quote not found in scraped text: '{ev.quote[:120]}'")]
 
 

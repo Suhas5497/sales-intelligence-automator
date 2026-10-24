@@ -37,6 +37,7 @@ class Response:
     final_url: str      # after redirects
     status_code: int
     html: str
+    truncated: bool = False  # body was cut at max_bytes
 
 
 def detect_challenge(html: str) -> bool:
@@ -111,12 +112,15 @@ class Fetcher:
         ctype = resp.headers.get("Content-Type", "")
         if ctype and "html" not in ctype and "xml" not in ctype:
             raise FetchError("NOT_HTML", f"content type is {ctype}")
-        body = b""
+        body, truncated = b"", False
         for chunk in resp.iter_content(65536):
             body += chunk
             if len(body) > self.max_bytes:
-                break                                    # keep the first max_bytes, enough for text
+                body, truncated = body[:self.max_bytes], True   # keep the first max_bytes and say so
+                resp.close()
+                break
         html = body.decode(resp.encoding or resp.apparent_encoding or "utf-8", errors="replace")
         if detect_challenge(html):
             raise FetchError("BLOCKED_BY_CHALLENGE", "site shows a CAPTCHA / bot check; not bypassed")
-        return Response(url=url, final_url=final_url, status_code=resp.status_code, html=html)
+        return Response(url=url, final_url=final_url, status_code=resp.status_code, html=html,
+                        truncated=truncated)

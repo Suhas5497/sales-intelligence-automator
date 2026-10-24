@@ -63,6 +63,9 @@ def _process(lead, fetcher, llm, settings, search, use_search) -> LeadResult:
         return _failed(lead, exc.code, exc.message, search, use_search)
 
     issues = identity_issues(lead, pages)
+    issues += [Issue(field="website", severity="warning",
+                     message=f"page was larger than {settings.max_bytes:,} bytes; only the first part was read: {p.final_url or p.url}")
+               for p in pages if p.truncated]
     useful = sum(len(p.text) for p in pages if p.text)
     if useful < settings.min_useful_chars:
         return LeadResult(lead=lead, status=Status.INSUFFICIENT_CONTENT, pages=pages, issues=issues,

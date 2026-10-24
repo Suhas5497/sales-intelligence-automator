@@ -51,6 +51,7 @@ class Page(BaseModel):
     title: str = ""
     text: str = ""
     method: str = ""                       # trafilatura | fallback
+    truncated: bool = False                # HTML was larger than MAX_BYTES and was cut
     fetched_at: str = Field(default_factory=utcnow)
     error: str = ""
 

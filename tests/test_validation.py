@@ -1,4 +1,4 @@
-from conftest import HOME, good_draft
+from conftest import COMMERCIAL, HOME, good_draft
 
 from sia.crawler import crawl
 from sia.models import BriefDraft
@@ -46,8 +46,24 @@ def test_exactly_three_questions_required(site_fetcher):
     assert needs_review(draft, issues)
 
 
-def test_cited_url_must_have_been_fetched(site_fetcher):
+def test_quote_from_unfetched_url_is_rejected(site_fetcher):
     data = good_draft()
     data["core_offering"]["evidence"] = [{"source_url": "https://evil.example/", "quote": "a quote that is nowhere"}]
-    _, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
-    assert any("was not fetched" in i.message for i in issues)
+    draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert draft.core_offering.evidence == []
+    assert any("quote not found" in i.message for i in issues)
+
+
+def test_quote_cited_to_wrong_page_is_corrected(site_fetcher):
+    data = good_draft()
+    data["b2b_qualification"]["evidence"] = [{"source_url": HOME, "quote": "under annual maintenance agreements"}]
+    draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert draft.b2b_qualification.evidence[0].source_url == COMMERCIAL
+    assert any("citation corrected" in i.message for i in issues)
+
+
+def test_quote_cited_to_unfetched_url_is_corrected_to_real_page(site_fetcher):
+    data = good_draft()
+    data["core_offering"]["evidence"] = [{"source_url": "https://evil.example/", "quote": "TPO, metal and flat roof systems"}]
+    draft, _ = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert draft.core_offering.evidence[0].source_url == HOME

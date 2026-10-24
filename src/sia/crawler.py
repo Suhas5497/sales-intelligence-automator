@@ -27,7 +27,8 @@ def crawl(start_url: str, fetcher: Fetcher, max_pages: int = 4, max_chars: int =
     result = []
     for (resp, _, method), lines in zip(fetched, deduped):
         result.append(Page(url=resp.url, final_url=resp.final_url, status_code=resp.status_code,
-                           title=page_title(resp.html), text="\n".join(lines)[:max_chars], method=method))
+                           title=page_title(resp.html), text="\n".join(lines)[:max_chars], method=method,
+                           truncated=resp.truncated))
     for resp, link, code in pages:
         if resp is None:
             result.append(Page(url=link, error=code))

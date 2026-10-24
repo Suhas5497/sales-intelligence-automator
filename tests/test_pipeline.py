@@ -70,6 +70,47 @@ def test_results_persist_with_separate_review(site_fetcher):
     assert "Edited by reviewer" in to_csv([row]) and '"review_status": "Approved"' in to_json([row])
 
 
+def test_reject_after_edit_keeps_edits_and_draft(site_fetcher):
+    repo = Repository(":memory:")
+    result = process_lead(lead(company_name="Lone Star Roofing", website=HOME, website_source="input"),
+                          site_fetcher, FakeLLM(good_draft()), SETTINGS)
+    brief_id = repo.save_result(result)
+    edited = result.draft.model_dump()
+    edited["target_audience"]["text"] = "Edited audience"
+    repo.save_review(brief_id, "Approved", edited, reviewer="Suhas")
+    row = repo.latest()[0]
+    repo.save_review(brief_id, "Rejected", row["reviewed"], row["reviewer"], row["review_notes"] or "")
+    row = repo.latest()[0]
+    assert row["effective_status"] == "Rejected"
+    assert row["status"] == result.status.value                                # pipeline status untouched
+    assert row["final"]["target_audience"]["text"] == "Edited audience"
+    assert row["draft"]["target_audience"]["text"] != "Edited audience"
+
+
+def test_approve_without_edits_uses_ai_draft(site_fetcher):
+    repo = Repository(":memory:")
+    result = process_lead(lead(company_name="Lone Star Roofing", website=HOME, website_source="input"),
+                          site_fetcher, FakeLLM(good_draft()), SETTINGS)
+    brief_id = repo.save_result(result)
+    repo.save_review(brief_id, "Approved", None)
+    row = repo.latest()[0]
+    assert row["effective_status"] == "Approved" and row["final"] == row["draft"]
+
+
+def test_truncated_page_is_reported(site_fetcher):
+    real_get = site_fetcher.get
+
+    def get(url):
+        resp = real_get(url)
+        resp.truncated = url == HOME
+        return resp
+
+    site_fetcher.get = get
+    result = process_lead(lead(company_name="Lone Star Roofing", website=HOME, website_source="input"),
+                          site_fetcher, FakeLLM(good_draft()), SETTINGS)
+    assert any("only the first part was read" in i.message for i in result.issues)
+
+
 def test_retired_gemini_model_switches_automatically():
     from types import SimpleNamespace
     from google.genai import errors

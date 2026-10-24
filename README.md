@@ -113,8 +113,9 @@ confirms it**: guessing the wrong company is worse than asking.
 **Keeping the LLM strict.** The model is told to use only the supplied pages, to treat page text as
 untrusted data (prompt-injection guard), to return "Not stated on the website" rather than guess, and to
 attach a verbatim quote + URL to every claim and question. Python then re-checks everything: each quote must
-appear (after whitespace/quote normalisation) in the text of a page we actually fetched; unverified evidence
-is removed; a claim left with no evidence is an error; a Yes/No B2B decision without verified evidence is
+appear (after whitespace/quote normalisation) in the text of a single page we actually fetched; a quote found
+on a different page than the one cited has its link corrected to that page, so a brief never points to the
+wrong source; unverified evidence is removed; a claim left with no evidence is an error; a Yes/No B2B decision without verified evidence is
 downgraded to "Insufficient evidence"; a "No" on a site that mentions commercial clients, property managers,
 contractors etc. is flagged as contradictory; there must be exactly three distinct, non-generic questions,
 each tied to verified text; and the site must actually mention the company name (catches wrong-company
@@ -123,8 +124,16 @@ URLs and redirects). Any error puts the brief in **Needs review**. Malformed JSO
 
 **Edge cases handled.** Missing scheme / `www` / fragments in URLs; duplicates; name-only leads; DNS failures,
 timeouts, 404s, 429 with Retry-After, 5xx (bounded retries); CAPTCHA/bot-check pages (reported, never
-bypassed); redirects to private addresses or other domains; non-HTML responses and oversized pages;
+bypassed); redirects to private addresses or other domains; non-HTML responses; oversized pages (cut at
+`MAX_BYTES` and flagged with a warning so the reviewer knows only part was read);
 JavaScript-only pages; missing About/Services pages; mixed residential + commercial businesses.
+
+**URL safety (SSRF).** Only `http(s)` URLs are fetched; the host is resolved and refused if any address is
+private, loopback, link-local or otherwise non-public, and the check is repeated on every redirect hop.
+Known limitation: `requests` resolves the name again when it connects, so a DNS-rebinding attacker who
+controls a domain could in theory swap in a private address between the check and the connection. Closing
+that fully means pinning the connection to the checked IP (a custom transport adapter) or fetching through
+an egress proxy that blocks private ranges, which is the production fix.
 
 **The B2B rule (assumption).** The assignment does not define the ICP, so the default treats a lead as B2B when
 its site shows it serves businesses or organisations; it is editable in the sidebar or with

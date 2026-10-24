@@ -71,3 +71,14 @@ def test_404_is_not_retried_and_challenge_is_reported():
     with pytest.raises(FetchError) as err:
         fetcher.get("https://93.184.216.34/")
     assert err.value.code == "BLOCKED_BY_CHALLENGE"
+
+
+def test_oversized_page_is_cut_and_flagged():
+    fetcher = Fetcher(session=FakeSession([FakeResp(200, "<p>" + "a" * 500 + "</p>")]), sleep=lambda s: None,
+                      max_bytes=100)
+    resp = fetcher.get("https://93.184.216.34/")
+    assert resp.truncated and len(resp.html) == 100
+
+
+def test_normal_page_is_not_flagged():
+    assert not make([FakeResp(200, "<p>ok</p>")]).get("https://93.184.216.34/").truncated
