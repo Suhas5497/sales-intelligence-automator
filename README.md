@@ -26,6 +26,7 @@ Headless run over the 15 assignment leads (writes SQLite + `output/sales_briefs.
 
 ```bash
 python run_batch.py sample_data/sample_leads.txt
+python run_batch.py sample_data/sample_leads.txt --retry-failed   # re-run only "LLM failed" leads (Gemini 503 / quota)
 ```
 
 Tests (no network, no API key; saved HTML fixtures and a fake LLM):

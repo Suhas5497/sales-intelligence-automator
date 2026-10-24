@@ -13,6 +13,7 @@ from sia.export import to_csv, to_hubspot_csv, to_json  # noqa: E402
 from sia.fetcher import Fetcher  # noqa: E402
 from sia.ingestion import deduplicate, parse_csv, parse_text  # noqa: E402
 from sia.llm import GeminiClient, LLMError  # noqa: E402
+from sia.models import Lead, Status  # noqa: E402
 from sia.pipeline import process_batch  # noqa: E402
 from sia.repository import Repository  # noqa: E402
 
@@ -24,6 +25,9 @@ def main() -> int:
     parser.add_argument("--json", default="output/sales_briefs.json")
     parser.add_argument("--hubspot", default="output/hubspot_companies.csv", help="CRM import file")
     parser.add_argument("--no-search", action="store_true", help="do not suggest websites for name-only leads")
+    parser.add_argument("--retry-failed", action="store_true",
+                        help="only re-run leads whose last saved result was 'LLM failed' or 'Error' "
+                             "(e.g. after a Gemini 503 or quota limit), keeping all other results")
     args = parser.parse_args()
     logging.basicConfig(level=logging.WARNING)
     logging.getLogger("trafilatura").setLevel(logging.ERROR)
@@ -38,6 +42,12 @@ def main() -> int:
         print(f"warning: {exc.message}; briefs will not be generated")
         llm = None
     repo = Repository(settings.db_path)
+    if args.retry_failed:
+        retry = {Status.LLM_FAILED.value, Status.ERROR.value}
+        failed = {Lead(raw_input=r["raw_input"], company_name=r["company_name"] or "", location=r["location"] or "",
+                       website=r["website"] or "").key for r in repo.latest() if r["status"] in retry}
+        leads = [lead for lead in leads if lead.key in failed]
+        print(f"retrying {len(leads)} failed lead(s)")
 
     def report(i, total, result):
         repo.save_result(result)

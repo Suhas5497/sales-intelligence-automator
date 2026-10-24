@@ -12,7 +12,7 @@ from .fetcher import Fetcher, FetchError
 from .ingestion import is_reserved_host
 from .llm import LLMClient, LLMError, generate_brief
 from .models import Issue, Lead, LeadResult, Status
-from .validation import needs_review, normalize, validate
+from .validation import NOT_STATED, needs_review, normalize, validate
 
 log = logging.getLogger(__name__)
 
@@ -105,6 +105,11 @@ def _research_by_name(lead: Lead, llm, settings: Settings, search, use_search: b
     except LLMError as exc:
         return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates, pages=snippets,
                           error_code=exc.code, error_message=f"No website given. {ask}", model=llm.model)
+    if all(NOT_STATED.match(getattr(draft, f).text.strip())
+           for f in ("company_overview", "core_offering", "target_audience")):
+        return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates, pages=snippets,
+                          model=llm.model, error_message="No website given. The search results found were not "
+                                                         f"clearly about this company. {ask}")
     draft, issues = validate(draft, snippets)
     issues.insert(0, Issue(field="website", severity="warning",
                            message=f"preliminary brief from {len(snippets)} web search snippet(s), not the company's website"))

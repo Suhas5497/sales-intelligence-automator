@@ -91,3 +91,10 @@ def test_paraphrased_claim_with_matching_words_passes(site_fetcher):
     data["core_offering"]["text"] = "Installs metal roofing and flat roofs."
     draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
     assert not [i for i in issues if i.field == "core_offering"]
+
+
+def test_digits_inside_words_are_not_treated_as_numbers(site_fetcher):
+    data = good_draft()
+    data["b2b_qualification"]["rationale"] = "A B2B lead: commercial roofing for property managers."
+    _, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert not [i for i in issues if "does not appear" in i.message]

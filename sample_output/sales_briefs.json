@@ -1,7 +1,7 @@
 [
   {
     "lead_id": 1,
-    "brief_id": 33,
+    "brief_id": 24,
     "raw_input": "https://www.houstonroofingonline.com",
     "company_name": "",
     "location": "",
@@ -12,11 +12,11 @@
     "error_message": "",
     "draft": {
       "company_overview": {
-        "text": "Houston Roofing & Construction is a Houston-based roofing and siding contractor established in 2009 that provides roof replacement, repair, and inspection services across residential, commercial, and multi-family properties.",
+        "text": "Founded in 2009 as a residential roofing company, Houston Roofing & Construction has expanded to provide roofing and siding services across residential, commercial, and multifamily properties throughout the greater Houston area. Their leadership team brings commercial construction experience, and the company operates with in-house project managers providing structured project oversight.",
         "evidence": [
           {
             "source_url": "https://houstonroofingonline.com/",
-            "quote": "Houston roof replacement experts for residential & commercial roofing."
+            "quote": "Houston Roofing & Construction was founded in 2009 as a residential roofing company and has grown into serving residential, commercial, and multifamily properties"
           },
           {
             "source_url": "https://houstonroofingonline.com/",
@@ -25,7 +25,7 @@
         ]
       },
       "core_offering": {
-        "text": "The company offers flat, low-slope, and metal commercial roof replacements, repairs, and coatings (including TPO, Modified Bitumen, and PVC), multi-family roofing installations, residential shingle and metal roofing, and fiber cement and wood siding.",
+        "text": "The company offers commercial and residential roof replacement, repair, inspections, coatings, and siding installation. For commercial and multifamily structures, they specialize in flat and low-slope systems such as TPO, modified bitumen, PVC, and metal roofing.",
         "evidence": [
           {
             "source_url": "https://houstonroofingonline.com/",
@@ -38,52 +38,52 @@
         ]
       },
       "target_audience": {
-        "text": "The target audience includes commercial property owners, building managers, property managers of apartments and townhomes, and residential homeowners in Houston and surrounding communities.",
+        "text": "Houston Roofing & Construction serves local homeowners, commercial property owners, businesses, property managers, and multifamily communities such as apartments and townhomes across the Houston metropolitan area.",
         "evidence": [
           {
-            "source_url": "https://houstonroofingonline.com/commercial-roofing-services-houston-tx/commercial-roof-replacement-houston/",
-            "quote": "Feedback from building owners and property managers who have worked with us on commercial roof replacement projects."
+            "source_url": "https://houstonroofingonline.com/commercial-and-multi-family-roofing-gallery-houston/",
+            "quote": "Real Projects For Businesses, Property Managers & Multi-Family Communities"
           },
           {
             "source_url": "https://houstonroofingonline.com/",
-            "quote": "Asphalt shingle and metal roof replacement, repair, and inspections for Houston homeowners dealing with aging roofs, storm damage, and insurance requirements."
+            "quote": "Roofing for apartments, townhomes, and multi-building properties. Coordinated installs, tenant-aware execution, and scalable solutions for large properties."
           }
         ]
       },
       "b2b_qualification": {
         "decision": "Yes",
-        "rationale": "Houston Roofing & Construction explicitly caters to B2B clients, providing commercial flat and low-slope roofing systems, coatings, repairs, and multi-family property roofing services to businesses, property managers, and building owners.",
+        "rationale": "Houston Roofing & Construction provides explicit commercial and multifamily roofing services, specifically serving businesses, commercial properties, and property managers.",
         "evidence": [
-          {
-            "source_url": "https://houstonroofingonline.com/",
-            "quote": "Flat, low-slope, and metal roofing systems, coatings, repairs, replacements, and new construction for Houston commercial properties."
-          },
           {
             "source_url": "https://houstonroofingonline.com/commercial-roofing-services-houston-tx/commercial-roof-replacement-houston/",
             "quote": "Feedback from building owners and property managers who have worked with us on commercial roof replacement projects."
+          },
+          {
+            "source_url": "https://houstonroofingonline.com/",
+            "quote": "Flat, low-slope, and metal roofing systems, coatings, repairs, replacements, and new construction for Houston commercial properties."
           }
         ]
       },
       "discovery_questions": [
         {
-          "question": "How do your project managers coordinate roof replacements on active commercial sites to ensure tenants and business operations experience minimal disruption?",
+          "question": "How do your project managers handle installation scheduling and staging on active commercial properties to ensure operations stay uninterrupted?",
           "based_on": {
             "source_url": "https://houstonroofingonline.com/commercial-roofing-services-houston-tx/commercial-roof-replacement-houston/",
-            "quote": "Projects are coordinated to reduce impact on daily operations."
+            "quote": "Can My Business Stay Open During Replacement? In most cases, yes. Projects are coordinated to reduce impact on daily operations."
           }
         },
         {
-          "question": "When working on large multi-family properties, what specific procedures do your teams follow to ensure tenant-aware execution and smooth project delivery across multiple buildings?",
+          "question": "What operational protocols do your teams implement to execute tenant-aware installations across multifamily and apartment complexes?",
           "based_on": {
             "source_url": "https://houstonroofingonline.com/",
             "quote": "Roofing for apartments, townhomes, and multi-building properties. Coordinated installs, tenant-aware execution, and scalable solutions for large properties."
           }
         },
         {
-          "question": "When consulting with commercial building owners, what criteria do you use to recommend a roof coating versus a full replacement system such as TPO or Mod Bit?",
+          "question": "When commercial clients evaluate recurring leak repairs versus full system replacement, what framework do you use to assess whether a coating or full tear-off is the better investment?",
           "based_on": {
             "source_url": "https://houstonroofingonline.com/commercial-roofing-services-houston-tx/commercial-roof-replacement-houston/",
-            "quote": "We install TPO, Mod Bit, PVC, metal, and more. We also do roof coatings."
+            "quote": "Not every commercial roof needs to be replaced right away, but there\u2019s a point where continued repairsand coatings stop being practical."
           }
         }
       ]
@@ -98,7 +98,8 @@
         "title": "Houston Roofing | Expert Roof Replacement & Repairs",
         "text": "Houston roof replacement experts for residential & commercial roofing. Storm damage assessments, A+ BBB, free estimates.\nView Our Service Areas\n- Serving Houston and surrounding areas\nGet Your Free Instant Quote\nGet Started Now Schedule Appointment\nCall Today (832) 237-3737\nEvery roofing and siding project starts in a different place. Different building types. Different constraints. Different goals. So we don\u2019t force everything into one system. We build plans around what you own and what you actually need.\nAsphalt shingle and metal roof replacement, repair, and inspections for Houston homeowners dealing with aging roofs, storm damage, and insurance requirements.\nFlat, low-slope, and metal roofing systems, coatings, repairs, replacements, and new construction for Houston commercial properties. Built for performance, scheduling reliability, and long-term planning.\nRoofing for apartments, townhomes, and multi-building properties. Coordinated installs, tenant-aware execution, and scalable solutions for large properties.\nDurable fiber cement and wood siding solutions, built for long-lasting protection and performance.\nHouston Roofing: Built Around The Right Roof\u2014\nNot Just One Roof\nMost roofing companies stick to a limited number of roofing solutions.\nWe don\u2019t.\nHouston Roofing & Construction was founded in 2009 as a residential roofing company and has grown into serving residential, commercial, and multifamily properties\u2014without changing how we approach the work.\nOur leadership team brings over 20 years of commercial construction experience, focusing on systems, coordination, and long-term performance\u2014not shortcuts.\nWe\u2019re local, born and raised in Houston, working in an industry where standards can vary widely. That\u2019s why we focus on clear communication, honest recommendations, and consistent results.\n- We inspect the roof\n- We show you what we see\n- We explain your options clearly\nNo pushing one manufacturer or one solution. No one-size-fits-all answer. Just a roofing plan that fits your property.\nManufacturer-Neutral Guidance\nWe don\u2019t push one brand. We present options across systems and manufacturers so you can make the right decision for your property\u2014not ours.\nBuilt For Real Houston Conditions\nHeat, storms, humidity, and insurance requirements all impact how roofs perform here. We install systems built for how roofs actually age in Houston.\nGood / Better / Best Products\nEvery project includes tiered options based on budget, goals, and ownership timeline\u2014so you\u2019re not forced into one solution.\nYou\u2019ll hear a lot about 30-year, 40-year, even 50-year products and warranties. Sounds impressive. But in Houston, that number usually isn\u2019t what determines a roof's lifecycle or when it needs replacement.\nMost roofs here are replaced because of insurance requirements, age thresholds, or storm history\u2014not because the warranty ran out.\nWarranty Expectations vs Reality\nWhat You Hear\nWhat Actually Matters\n\u201c50-year warranty\u201d\nMost roofs are replaced long before that\n\u201cLifetime Coverage\u201d\nOnly applies if the install and setup are done correctly\n\u201cYou\u2019re protected\u201d\nOnly if the warranty is valid and registered\nIt\u2019s not the biggest number that matters\u2014it\u2019s whether everything behind that warranty holds up. The roof has to be installed correctly. The warranty has to be set up properly. And the coverage has to make sense for how long you\u2019ll realistically own the property.\nThat\u2019s why we still offer strong manufacturer-backed warranties, including premium options. But we don\u2019t lead with the number.\nWe focus on getting the install right, making sure everything is registered correctly, and helping you choose coverage that actually fits your situation.\nChoose Houston Roofing & Construction\nWhen it comes to your roofing project, we believe in quality without compromise. Our proven processes, passionate professionals, and unprecedented warranties guarantee you first-class results... and your total peace of mind.\nReal Project Managers. Real Oversight.\nYour project isn\u2019t handed off to a rotating crew. Our project managers are in-house employees who oversee the job from start to finish\u2014making sure the scope is followed, the install is done right, and nothing gets missed along the way.\nBuilt For Houston\u2014And Still Here After The Storm\nWe\u2019re not a storm-chasing company that shows up, does the work, and disappears. We\u2019re based here. We work here. And we\u2019re here after the job is done. That means we understand:\n- Houston\u2019s weather patterns\n- Local building expectations\n- How insurance actually works in this market\nQualified By Choice\u2014Not By Requirement\nTexas doesn\u2019t require much to call yourself a roofer. We hold ourselves to a higher standard.\n- RCAT Licensed.\n- Manufacturer-certified across multiple systems.\n- Committed to ongoing training\u2014not just meeting minimums.\nRepair Or Replace? We\u2019ll Tell You Straight.\nNot every roof needs to be replaced. And not every repair is worth it.\nWe inspect the roof, show you what we see, and walk you through your options\u2014without pushing you in one direction.\nA Process That Doesn\u2019t Miss Details\nRoofing jobs fall apart when steps get skipped. We use a structured process with multiple checkpoints\u2014from inspection to final cleanup\u2014to make sure everything is done correctly.\n- Clear communication.\n- Defined steps.\n- No guessing.\nRoofing Options For Everyone\nWe offer Good, Better, and Best roofing options based on your goals and budget. From cost-effective asphalt shingles to upgraded architectural systems and long-lasting metal roofing, each option is built for Houston\u2019s heat, storms, and insurance demands.\nAbout Houston Roofing\n\u201cExcellent quality materials and very professional quality work\u2026 Finished roof shingles were beautiful, and matched the color and style shown in the literature. The Project Manager listened patiently to all of my concerns and quickly addressed any issues\u2026 I highly recommend Houston Roofing and construction to anyone planning to put new shingles on their roof. The neighbors are ",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:36:03+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:51:29+00:00",
         "error": ""
       },
       {
@@ -108,7 +109,8 @@
         "title": "Commercial Roof Replacement Houston, TX | Flat Roofing",
         "text": "Commercial roof replacement in Houston TX. Flat and low-slope systems installed with clear planning, coordination, and minimal disruption.\nCommercial Roof Replacement Houston, TX\nHouston Commercial Roof Replacement With Clear Planning, Coordination, And Oversight\nFlat And Low-Slope Roof Replacement & System Installation\nFor Houston Commercial Properties\nCommercial roof installation in Houston depends on planning, coordination, and execution done correctly from the start.\nThese projects usually involve existing roofs, prior repairs, and conditions that need to be understood before anything is replaced. What\u2019s underneath, how water is moving, and how the system ties into the rest of the building all affect how the new roof should be built.\nAs a general contractor, Houston Roofing & Construction evaluates the existing roof, documents current conditions, and defines the full scope before work begins. From there, we manage the project start to finish, coordinating materials, crews, and sequencing so the system is installed the way it\u2019s designed to perform.\nYou\u2019re not piecing decisions together mid-project or reacting as problems show up. You\u2019re working from a defined plan built around the property.\nWhen Commercial Roof Replacement Makes Sense\nNot every commercial roof needs to be replaced right away, but there\u2019s a point where continued repairsand coatings stop being practical.\nReplacement is typically the better option when the system is showing widespread wear, repairs are becoming more frequent, or performance is declining across multiple areas.\nRepeated Repairs\nIf the same issues keep coming back, it often indicates system-wide deterioration, such as membrane wear, seam failure, or breakdown across multiple sections of the roof. Temporary fixes may solve the immediate problem, but they don\u2019t address the underlying wear across the roof.\nOver time, repair costs add up, and disruptions become more frequent. At that point, replacement often becomes the more practical and cost-effective path forward.\nWidespread Wear\nCommercial roofing systems don\u2019t fail all at once. They deteriorate over time across multiple areas. Membrane wear, seam separation, and material breakdown across large sections of the roof are indicators that the system is nearing the end of its usable life. When deterioration is no longer localized, repairs become less effective and harder to manage consistently.\nDrainage Problems\nStanding water and poor drainage are among the most common causes of commercial roof failure. If water isn\u2019t moving off the roof properly, it accelerates material breakdown and increases the risk of leaks.\nWhile minor drainage issues can sometimes be corrected, widespread ponding often points to larger system limitations that are better addressed during replacement.\nPlanning & Budget Control\nWaiting until a roof fails forces decisions under pressure. Replacing the system on your timeline allows for better coordination, budgeting, and planning. It also gives you the opportunity to select the right system for the building instead of reacting to an urgent issue. Proactive replacement helps reduce long-term costs and avoids unexpected disruptions to operations.\nWhat A Commercial Roof Replacement Involves\nCommercial roof replacement is more than an overlay or removing the old system and installing a new one. We see your building as a whole. It requires a proper inspection, the right system selection, and work coordination so the building continues to operate.\nFull System Removal & Prep\nWe start with a controlled tear-off of the existing system, removing materials down to a suitable substrate. Then we identify underlying issues, address problem areas, and prepare the surface properly.\nSystem Selection & Installation\nWe install the roofing system that best fits the building. That may include metal, TPO, modified bitumen, or other flat or low-slope roofing systems, depending on structure, usage, and goals. Each system is installed according to manufacturer\u2019s requirements and best practices.\nDrainage & Detail Work\nWater management is one of the most important parts of a commercial roof. We address drainage, slope, and key detail areas so water moves off the roof properly. This helps prevent ponding, leaks, and long-term system breakdown.\nProject Coordination & Oversight\nCommercial projects require coordination. Our in-house project managers oversee the process, working with specialized commercial crews to keep the project on track and minimize disruption. You\u2019ll know what\u2019s happening and what to expect at every stage.\nCommercial Roof Replacement Projects In Houston, TX\nExamples of commercial roof replacement projects completed across Houston properties.\nWhat Houston Property Owners Say About Our Commercial Roofing\nFeedback from building owners and property managers who have worked with us on commercial roof replacement projects.\nCommercial Roof Replacement FAQ\nHow Long Does A Commercial Roof Replacement Take?\nIt depends on the size of the building and the system being installed, but most commercial roof projects are completed in a few weeks, and we work to minimize disruption.\nCan My Business Stay Open During Replacement?\nIn most cases, yes. Projects are coordinated to reduce impact on daily operations.\nHow Do I Know Which System Is Right For My Building?\nWe evaluate the structure, usage, and goals of the property and walk you through the options.\nIs It Better To Repair Or Replace?\nThat depends on the condition of the system and the cost of ongoing repairs versus replacement.\nWhat Kinds Of Systems Do You Install?\nWe install TPO, Mod Bit, PVC, metal, and more. We also do roof coatings.\nWhat Affects The Cost Of Replacement?\nSize, system type, condition of the existing roof, and complexity all factor into cost.\nWhat Areas Do You Service Around Houston?\nWe work throughout the Houston region, including Tomball, Cypress, Katy, Humble, Sugarland, Pearland, The Woodlands, and more. Visit our Service Areas page for detail",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:36:03+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:51:29+00:00",
         "error": ""
       },
       {
@@ -118,7 +120,8 @@
         "title": "Commercial Roof Repair Houston TX | Flat & Low-Slope Roofing",
         "text": "Commercial roof repair in Houston TX. Fix leaks, membrane damage, and drainage issues on flat and low-slope roofing systems.\nCommercial Roof Repair For Houston, TX\nCommercial Roof Repair That Starts With Understanding The System\nFlat & Low-Slope Roof Repair For Houston Commercial Properties\nCommercial roof repair in Houston focuses on identifying the cause of the issue, including drainage, flashing, membrane condition, and system performance.\nWith a background in commercial construction, at Houston Roofing & Construction, we approach repairs by looking at the full system, not just the visible problem. That means identifying underlying issues, evaluating how the roof is performing overall, and determining whether a repair will actually solve the problem.\nHere, storms, heat, wind, and ongoing exposure create conditions where small issues can turn into larger ones quickly. We address problems early, minimize disruption, and avoid unnecessary repairs that don\u2019t hold up over time.\nCommon Commercial Roof Problems\nMost commercial roof issues start small, but they rarely stay that way.\n1. Leaks & Water Intrusion\nLeaks are often caused by failed seams, flashing issues, or penetrations where water can enter the roofing system. Identifying the source correctly is critical to making a repair that lasts.\n2. Ponding Water\nStanding water puts stress on the roofing system and accelerates wear. Over time, it can lead to membrane breakdown and increased risk of leaks.\n3. Membrane Damage\nCracks, punctures, and general wear can occur from weather exposure or foot traffic. These issues may be repairable depending on the extent and location.\n4. Storm-Related Damage\nHigh winds, debris, and heavy rain can loosen materials or create vulnerabilities that aren\u2019t always immediately visible but can lead to problems later.\nOur Approach To Commercial Roof Repair\nCommercial roof repair involves choosing the right repair method based on system condition, material type, and the source of the issue.\nFull-System Evaluation\nWe inspect the entire roof, including membrane, flashing, drainage, and surrounding areas to understand overall system performance. This helps us understand how the system is performing and whether the issue is isolated or part of a larger pattern.\nRoot Cause Identification\nInstead of treating symptoms, we focus on identifying the source of the problem. That could be drainage, installation details, or material wear. Fixing the cause leads to longer-lasting repairs.\nTargeted Repair Work\nWhen a repair makes sense, we address the issue directly using the appropriate method for the system. The goal is to resolve the problem without unnecessary work or overbuilding the solution.\nProject Oversight & Coordination\nOur in-house project managers oversee each repair to ensure the work is completed correctly and coordinated with your operations. Even smaller repairs benefit from structured oversight.\nCommercial Roof Repair Work Across Houston Properties\nA look at commercial roof repair projects completed on buildings throughout the Houston area.\nWhat Property Owners Say About Our Repair Work\nHear from commercial clients who have trusted us to diagnose and repair roofing issues on their properties.\nCommon Commercial Roof Repair Questions\nHow Quickly Can You Respond To A Roof Leak?\nResponse time depends on current conditions and demand, but we prioritize urgent issues to help stabilize the situation quickly.\nCan All Commercial Roof Problems Be Repaired?\nNot always. Some issues are better addressed through replacement, especially if the system is near the end of its life. A commercial roof inspection will give you the information you need to make an educated decision.\nWill Repairs Disrupt My Business Operations?\nWe coordinate repairs to minimize disruption and keep your building functioning as normally as possible.\nHow Long Do Repairs Typically Last?\nThat depends on the condition of the system and the type of repair. Properly identified and executed repairs will last longer than temporary fixes.\nDo You Provide Documentation Of The Repair?\nYes. We document what we find and what\u2019s repaired so you have a clear record of the work performed.\nWhat Areas Around Houston Do You Serve?\nYou\u2019ll find Houston Roofing & Construction in communities across the region, including Tomball, Conroe, Katy, Pearland, Sugarland, The Woodlands, and Humble. See our service areas page for a detailed map.\nTo learn more about Houston Roofing & Construction, visit any of the following pages:",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:36:03+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:51:29+00:00",
         "error": ""
       },
       {
@@ -128,21 +131,22 @@
         "title": "Commercial & Multi-Family Roofing Gallery | Houston",
         "text": "Explore commercial & multi-family roofing projects in Houston TX. See real work across businesses, apartments, and multi-building properties.\nExplore Commercial & Multi-Family Roofing Projects\nAcross The Greater Houston Area\nRoofing Systems Designed For Real Commercial &\nMulti-Family Buildings Across Houston\nReal Projects For Businesses, Property Managers\n& Multi-Family Communities\nCommercial and multi-family roofing projects in Houston involve more coordination and planning than a typical residential job. At Houston Roofing & Construction, we evaluate the building, document what\u2019s happening, and help you understand your options before work begins.\nOur team brings a commercial construction background to every project, with an emphasis on quality, safety, and systems that are built for the way the property actually performs. Here\u2019s a look at recent commercial and multi-family projects across the Houston area.\nTPO commercial roof Katy, TX\nroof replacement multi family Houston, TX\nroof hatch installation\nremarkable roof repair services stafford tx houston roofing and construction\nremarkable low slope roofing services stafford tx houston roofing and construction\nremarkable commercial roofing services stafford tx houston roofing and construction\nremarkable commercial roofing services stafford tx houston roofing and construction(1)\noutstanding roofing services stafford tx houston roofing and construction\noutstanding commercial roofing services stafford tx houston roofing and construction\nMetal roof replacement Houston\nMetal Roof Replacement Church\nHouston Roofing and Construction multi family partial replacement\nexceptional low slope roofing services stafford tx houston roofing and construction\nexcellent low slope roofing services stafford tx houston roofing and construction\nexcellent commercial roofing services stafford tx houston roofing and construction\ndown net http20260326 509 vlkdq\ndown net http20260227 135 8try2z\ndown net http20260120 274 rpchmq\ndown net http20260120 199 hmqizp\ndown net http20260120 184 wt4gsy\ndome coating Houston Roofing and Construction\ndependable low slope roofing services stafford tx houston roofing and construction\ndependable commercial roofing services stafford tx houston roofing and construction\ncommunity complex roof replacement Houston, TX\ncoating project Houston, TX\nCoating in progress\nCoating after\nCarlisle TPO overlay 2025 Houston Roofing and Construction\nbefore and after TPO overlay\nA Commercial Roof In Process\nA 7 11 Located In Houston, Texas\n77065 commercial coating metal roof\n9.29\n9.29 progress\n9.29 Chapel\n9.24 townhome roof replacement in Houston TX\n3 story roof replacement in progress 77007\n3 Mar 23 2023 02 42am 4h2V\n2 Mar 23 2023 02 39am 1e6n\n1 Untitled\n1 Metal roof replacement\n1 down net http20260408 143 oz7qs3\n1 down net http20260326 355 yjyl94\n1 Dec 28 2022 05 18am iYd1",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:36:03+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:51:29+00:00",
         "error": ""
       }
     ],
     "candidates": [],
     "model": "gemini-3.8-flash",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:41:56+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:53:24+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 2,
-    "brief_id": 34,
+    "brief_id": 10,
     "raw_input": "BrightPlay Turf \u2013 Artificial Turf & Landscaping, Chicago IL",
     "company_name": "BrightPlay Turf",
     "location": "Chicago, IL",
@@ -150,11 +154,123 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
-    "draft": null,
+    "error_message": "Preliminary brief from web search results, not the official website. Confirm a suggested site or paste the official URL below. Confirming a site replaces this with a verified brief.",
+    "draft": {
+      "company_overview": {
+        "text": "BrightPlay Turf is a Chicago-based artificial grass and turf installation company providing low-maintenance outdoor solutions for residential and commercial properties.",
+        "evidence": [
+          {
+            "source_url": "https://brightplayturf.com/about/",
+            "quote": "At BrightPlay Turf, we specialize in premium artificial turf solutions for both residential and commercial properties throughout the Chicago area."
+          }
+        ]
+      },
+      "core_offering": {
+        "text": "The company installs custom artificial grass and turf as well as landscaping solutions designed for long-term use and low maintenance.",
+        "evidence": [
+          {
+            "source_url": "https://brightplayturf.com/",
+            "quote": "BrightPlay Turf installs custom artificial grass for homes, businesses, and sports areas across the Chicago area."
+          }
+        ]
+      },
+      "target_audience": {
+        "text": "BrightPlay Turf serves residential and commercial property owners, businesses, and sports areas throughout the Chicago area.",
+        "evidence": [
+          {
+            "source_url": "https://brightplayturf.com/",
+            "quote": "BrightPlay Turf installs custom artificial grass for homes, businesses, and sports areas across the Chicago area."
+          }
+        ]
+      },
+      "b2b_qualification": {
+        "decision": "Yes",
+        "rationale": "The company explicitly states that it installs turf for businesses and commercial properties alongside residential clients.",
+        "evidence": [
+          {
+            "source_url": "https://brightplayturf.com/about/",
+            "quote": "At BrightPlay Turf, we specialize in premium artificial turf solutions for both residential and commercial properties throughout the Chicago area."
+          }
+        ]
+      },
+      "discovery_questions": [
+        {
+          "question": "How do your installation workflows and project timelines differ when working on commercial properties compared to residential jobs?",
+          "based_on": {
+            "source_url": "https://brightplayturf.com/about/",
+            "quote": "At BrightPlay Turf, we specialize in premium artificial turf solutions for both residential and commercial properties throughout the Chicago area."
+          }
+        },
+        {
+          "question": "What unique technical or material specifications do you typically address when installing artificial grass for sports areas?",
+          "based_on": {
+            "source_url": "https://brightplayturf.com/",
+            "quote": "BrightPlay Turf installs custom artificial grass for homes, businesses, and sports areas across the Chicago area."
+          }
+        },
+        {
+          "question": "How are your comprehensive landscaping solutions bundled or managed alongside artificial turf installations for commercial clients?",
+          "based_on": {
+            "source_url": "https://www.flamingoagency.com/portfolio/brightplay-turf/",
+            "quote": "BrightPlay Turf is a growing Chicago company specializing in artificial turf installation and landscaping solutions for residential and commercial properties."
+          }
+        }
+      ]
+    },
     "reviewed": null,
-    "issues": [],
-    "pages": [],
+    "issues": [
+      {
+        "field": "website",
+        "severity": "warning",
+        "message": "preliminary brief from 4 web search snippet(s), not the company's website"
+      }
+    ],
+    "pages": [
+      {
+        "url": "https://brightplayturf.com/",
+        "final_url": "https://brightplayturf.com/",
+        "status_code": null,
+        "title": "Artificial Grass Installation Company | BrightPlay Turf",
+        "text": "Artificial Grass Installation Company | BrightPlay Turf. BrightPlay Turf installs custom artificial grass for homes, businesses, and sports areas across the Chicago area. Get a free quote today",
+        "method": "search_snippet",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:22:02+00:00",
+        "error": ""
+      },
+      {
+        "url": "https://brightplayturf.com/about/",
+        "final_url": "https://brightplayturf.com/about/",
+        "status_code": null,
+        "title": "About Us - BrightPlay Turf",
+        "text": "About Us - BrightPlay Turf. At BrightPlay Turf, we specialize in premium artificial turf solutions for both residential and commercial properties throughout the Chicago area. Our mission is simple: to help you create outdoor spaces that are clean, low-maintenance, and built to last",
+        "method": "search_snippet",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:22:02+00:00",
+        "error": ""
+      },
+      {
+        "url": "https://www.flamingoagency.com/portfolio/brightplay-turf/",
+        "final_url": "https://www.flamingoagency.com/portfolio/brightplay-turf/",
+        "status_code": null,
+        "title": "Website Design for Turf & Landscaping Company in Chicago, IL",
+        "text": "Website Design for Turf & Landscaping Company in Chicago, IL. BrightPlay Turf is a growing Chicago company specializing in artificial turf installation and landscaping solutions for residential and commercial properties. The company helps property owners create attractive, low-maintenance outdoor spaces using artificial grass designed for long-term use",
+        "method": "search_snippet",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:22:02+00:00",
+        "error": ""
+      },
+      {
+        "url": "https://affordablewebdesignchicago.com/landscaping-website-design/",
+        "final_url": "https://affordablewebdesignchicago.com/landscaping-website-design/",
+        "status_code": null,
+        "title": "Landscaping Website Design Chicago | WordPress Web Design",
+        "text": "Landscaping Website Design Chicago | WordPress Web Design. A custom WordPress website designed for BrightPlay Turf to showcase artificial grass installations, highlight completed projects, and connect Chicago property owners with professional turf installation services",
+        "method": "search_snippet",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:22:02+00:00",
+        "error": ""
+      }
+    ],
     "candidates": [
       {
         "url": "https://brightplayturf.com/",
@@ -165,28 +281,18 @@
           "name in title 100%",
           "mentions Chicago"
         ]
-      },
-      {
-        "url": "https://www.artificialturfsupply.com/",
-        "title": "Buy Artificial Turf in Chicago, Illinois",
-        "score": 0.6,
-        "reasons": [
-          "name in domain 50%",
-          "name in title 50%",
-          "mentions Chicago"
-        ]
       }
     ],
-    "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:42:00+00:00",
+    "model": "gemini-3.8-flash",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:24:06+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 3,
-    "brief_id": 39,
+    "brief_id": 11,
     "raw_input": "https://www.springhilllandscaping.com",
     "company_name": "",
     "location": "",
@@ -197,7 +303,7 @@
     "error_message": "",
     "draft": {
       "company_overview": {
-        "text": "King of the Hill is a landscaping and lawn care company providing outdoor services ranging from lawn maintenance and planting to paver installation, pest control, and fencing.",
+        "text": "King of the Hill is a landscaping and lawn care company offering design, maintenance, and installation services for properties ranging from residential homes to commercial sites.",
         "evidence": [
           {
             "source_url": "https://www.springhilllandscaping.com/",
@@ -206,7 +312,7 @@
         ]
       },
       "core_offering": {
-        "text": "The company offers lawn maintenance, landscape design, planting/sodding/arbor services, walkway/driveway/patio pavers, pest and weed control, hedge trimming, water and drip irrigation systems, mulching/erosion control, and fencing.",
+        "text": "The company offers lawn maintenance, planting, sodding, tree services, pavers for walkways/driveways/patios, pest and weed control, landscape design, irrigation systems, soil erosion control, and fencing.",
         "evidence": [
           {
             "source_url": "https://www.springhilllandscaping.com/",
@@ -219,21 +325,17 @@
         ]
       },
       "target_audience": {
-        "text": "King of the Hill serves both residential and commercial clients, covering home landscaping as well as commercial properties.",
+        "text": "The business caters to both residential homeowners and commercial property clients.",
         "evidence": [
           {
             "source_url": "https://www.springhilllandscaping.com/",
             "quote": "From Home Landscaping to Commercial Properties, we got ya covered."
-          },
-          {
-            "source_url": "https://www.springhilllandscaping.com/",
-            "quote": "King of the Hill is proud to offer carefully designed landscapes crafted to suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability."
           }
         ]
       },
       "b2b_qualification": {
         "decision": "Yes",
-        "rationale": "King of the Hill explicitly serves commercial properties and commercial clients alongside residential homeowners, satisfying the criteria for mixed residential and commercial operations.",
+        "rationale": "The company explicitly provides landscaping and maintenance services to commercial properties alongside residential clients.",
         "evidence": [
           {
             "source_url": "https://www.springhilllandscaping.com/",
@@ -241,30 +343,30 @@
           },
           {
             "source_url": "https://www.springhilllandscaping.com/",
-            "quote": "King of the Hill is proud to offer carefully designed landscapes crafted to suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability."
+            "quote": "suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability."
           }
         ]
       },
       "discovery_questions": [
         {
-          "question": "What proportion of your current operations is focused on commercial properties compared to residential jobs, and what types of commercial facilities do you typically service?",
+          "question": "How do your service agreements and scheduling differ when managing commercial properties versus residential accounts?",
           "based_on": {
             "source_url": "https://www.springhilllandscaping.com/",
             "quote": "From Home Landscaping to Commercial Properties, we got ya covered."
           }
         },
         {
-          "question": "How do you tailor your annual recurring packages, such as the 'ULTIMATE' maintenance plan, when managing larger-scale commercial contracts?",
+          "question": "What sustainable practices or materials do commercial clients most frequently request when you design landscapes for them?",
           "based_on": {
             "source_url": "https://www.springhilllandscaping.com/",
-            "quote": "ULTIMATE\n$TBD/yr\n- Lawn Maintenance\n- Edging\n- Bushes\n- Weeding Beds\n- Anual Weeding & Fertalizing (Spring & Fall)"
+            "quote": "suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability."
           }
         },
         {
-          "question": "When designing landscapes while prioritizing sustainability, what specific irrigation or water and drip systems do you incorporate?",
+          "question": "What challenges do you face when handling larger scope installations like water and drip irrigation systems or hardscape pavers?",
           "based_on": {
             "source_url": "https://www.springhilllandscaping.com/",
-            "quote": "King of the Hill is proud to offer carefully designed landscapes crafted to suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability."
+            "quote": "Water fictureWater & drip irrigation system"
           }
         }
       ]
@@ -279,21 +381,22 @@
         "title": "Home - King of the Hill",
         "text": "For All Your Landscaping Needs _ From Home Landscaping to Commercial ...\nFor All Your Landscaping Needs\nFrom Home Landscaping to Commercial Properties, we got ya covered.\nLawn Maintenance\nLawn Maintenance Done Right with King of the Hill. The single biggest difference between King of the Hill and other lawn care providers boils down to one thing, we care more. Stone Edging Around Beds Starting @ $15.00 a Linar ft.\nPlants, Sod, Trees...\nKing of the Hill's expert planting/sodding/arbor services will get you the lawn you\u00e2ve been dreaming about. Our experienced lawn specialists will guide you in choosing the right services for your lawn. Bahia Sod starting @ $1.50 a sq. ft., Flortan & St. Augustin @ $2.50\nPavers\nDurable Walkway, Driveway & Patio Pavers Enhance the Beauty and Function of Your Outdoor Space. Whether you're looking for a patio with old-world charm or a walkway with contemporary flair, Pavers can fit your style. Basic Pavers Starting @ $17.00 a sq. ft.\nIts Time to CREATE\u00c2 \u00c2 \u00c2 \u00c2 \u00c2 \u00c2 \u00c2 YOUR SPACE\nLet your imagination run wild...\nWhat we can do\nTurn your house into Your Home!\nOnce plants are in the garden, one of the biggest challenges is keeping weeds, pests, and diseases out the property.\n- Pest and weedsPest control and weeds removal\n- Landscape DesignLandscaping Design & Promenade\n- MaintenanceHedge Trimming & Maintenance\n- Water fictureWater & drip irrigation system\n- Soil erosionArresting Soil erosion & mulching\n- Restoration methodsLawn maintenance & restoration\n- FencingAll types of fencing\n- Garden fencingPicket fencing or hedge?\nThe fruits of our labor\nOur Recent Projects\nYEARS\nEXPERIENCE\nA little about us\nWe can handle everything for you!\nKing of the Hill is proud to offer carefully designed landscapes crafted to suit our commercial & residential clients\u00e2 preferences while prioritizing sustainability.\nOur packages\nLandscaping made EASY!\n$30 1-Time Cuts, ALL PRICES BASED ON 0.25 ACRE LOTS, PRICES CHANGES ACCORDINGLY.\nULTIMATE\n$TBD/yr\n- Lawn Maintenance\n- Edging\n- Bushes\n- Weeding Beds\n- Anual Weeding & Fertalizing (Spring & Fall)\nHappy clients and proud partners\nOur Customers and Partners\nMarci Jablonski\nSam was awesome to work with! He refreshed my landscaping and added stone edging. Couldn\u00e2t be happier. I would recommend him to anyone and look forward to working with him again!\nRachael Smithers\nHe just came and redid the front garden and planted two palm trees and did a amazing job. He went above and beyond to ensure that the job came out perfect. I absolutely love the front of my house now! Highly recommend if you want the job done well and done to your liking.",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:42:19+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:24:22+00:00",
         "error": ""
       }
     ],
     "candidates": [],
     "model": "gemini-3.8-flash",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:44:14+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:25:37+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 4,
-    "brief_id": 40,
+    "brief_id": 12,
     "raw_input": "Joe's Backyard Landscaping \u2013 Phoenix AZ",
     "company_name": "Joe's Backyard Landscaping",
     "location": "Phoenix, AZ",
@@ -301,22 +404,22 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
     "pages": [],
     "candidates": [],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:44:24+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:25:41+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 5,
-    "brief_id": 41,
+    "brief_id": 13,
     "raw_input": "https://www.centraltexasbarkery.com",
     "company_name": "",
     "location": "",
@@ -331,15 +434,15 @@
     "pages": [],
     "candidates": [],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:44:24+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:25:42+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 6,
-    "brief_id": 42,
+    "brief_id": 14,
     "raw_input": "Sunrise Plumbing & Drain Services \u2013 Tampa FL",
     "company_name": "Sunrise Plumbing & Drain Services",
     "location": "Tampa, FL",
@@ -347,7 +450,7 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
@@ -365,7 +468,7 @@
       },
       {
         "url": "https://sunrisedrainage.com/",
-        "title": "Water Drainage Services - Sunrise Drainage",
+        "title": "Drainage Services in Tampa Bay & Sarasota Areas \u2022 Sunrise ...",
         "score": 0.73,
         "reasons": [
           "name in domain 67%",
@@ -374,26 +477,26 @@
         ]
       },
       {
-        "url": "https://landscapeatlas.com/",
-        "title": "Sunrise Drainage - Landscape Atlas",
-        "score": 0.43,
+        "url": "https://sunriseirrigation.com/",
+        "title": "Professional Yard Drainage \u2022 Tampa, Orlando & Fort Myers ...",
+        "score": 0.47,
         "reasons": [
-          "name in domain 0%",
-          "name in title 67%",
+          "name in domain 33%",
+          "name in title 33%",
           "mentions Tampa"
         ]
       }
     ],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:44:26+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:25:44+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 7,
-    "brief_id": 48,
+    "brief_id": 25,
     "raw_input": "https://www.denverlockandsafe.com",
     "company_name": "",
     "location": "",
@@ -404,26 +507,34 @@
     "error_message": "",
     "draft": {
       "company_overview": {
-        "text": "Denver Lock And Safe provides 24/7 mobile locksmith and security services in Denver, Colorado, covering lock repairs, key cutting, and advanced locking installations.",
+        "text": "Denver Lock And Safe is a 24/7 mobile locksmith service provider based in Denver, Colorado, delivering automotive, residential, and commercial security and lock services.",
         "evidence": [
           {
             "source_url": "https://denverlockandsafe.com/",
-            "quote": "From providing clients in Denver, CO area with advanced locking options to catering to other basic needs such as key cutting, lock repairs, maintenance work, we operate an all-inclusive service."
+            "quote": "Our solutions extend to clients from automotive, residential and commercial sector, with specialists designated to cater to specific domains."
           }
         ]
       },
       "core_offering": {
-        "text": "The company delivers commercial, residential, automotive, and emergency locksmith services, including keyless entry, master key systems, lockouts, and safe installations.",
+        "text": "The company offers comprehensive commercial lock and security services, including hierarchical master key setups, emergency exit push bars, digital keypad locks, commercial lockout solutions, safe installations, and contractual security inspections.",
         "evidence": [
           {
             "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
-            "quote": "- Keyless entry solutions"
+            "quote": "Hierarchical master key system"
+          },
+          {
+            "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
+            "quote": "Emergency exit locks, push bars etc"
           }
         ]
       },
       "target_audience": {
-        "text": "Denver Lock And Safe serves commercial businesses and offices, as well as residential and automotive customers across the Denver area.",
+        "text": "Their target audience encompasses businesses, office facilities, and commercial clients seeking entry point security, along with automotive and residential property owners across the Denver area.",
         "evidence": [
+          {
+            "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
+            "quote": "That\u00e2s why we always recommend businesses to get their basics right before investing in over-the-top, expensive security systems."
+          },
           {
             "source_url": "https://denverlockandsafe.com/",
             "quote": "Our solutions extend to clients from automotive, residential and commercial sector, with specialists designated to cater to specific domains."
@@ -432,34 +543,34 @@
       },
       "b2b_qualification": {
         "decision": "Yes",
-        "rationale": "Denver Lock And Safe explicitly provides commercial locksmith and facility security services to businesses, including commercial lockout assistance, master keying, and contractual inspections.",
+        "rationale": "Denver Lock And Safe clearly qualifies as B2B because they offer tailored commercial locksmith solutions, office door security, and ongoing contractual inspections for businesses.",
         "evidence": [
           {
-            "source_url": "https://denverlockandsafe.com/",
-            "quote": "With businesses focusing on bolstering their security level, the insight of our commercial locksmiths proves to be valuable."
+            "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
+            "quote": "Contractual inspection provided"
           }
         ]
       },
       "discovery_questions": [
         {
-          "question": "How do you currently structure and manage your contractual inspection services for commercial facilities, and where do you see demand growing?",
+          "question": "How do you typically structure and manage recurring contractual inspections for your commercial property clients?",
           "based_on": {
             "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
-            "quote": "- Contractual inspection provided"
+            "quote": "Contractual inspection provided"
           }
         },
         {
-          "question": "What challenges do your commercial clients typically face when planning and maintaining hierarchical master key systems across multi-door facilities?",
+          "question": "What challenges do your business clients most often face when configuring and expanding hierarchical master key systems across their facilities?",
           "based_on": {
             "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
-            "quote": "- Hierarchical master key system"
+            "quote": "Hierarchical master key system"
           }
         },
         {
-          "question": "How do your dispatch and mobile units coordinate to maintain your 15-20 minute emergency response window during peak service hours?",
+          "question": "What criteria do you evaluate when helping commercial offices decide between standard exit devices and advanced emergency exit push bars?",
           "based_on": {
-            "source_url": "https://denverlockandsafe.com/",
-            "quote": "No matter where you are, our mobile vans won\u00e2t take more than 15-20 minutes to reach your location."
+            "source_url": "https://denverlockandsafe.com/commercial-locksmith.html",
+            "quote": "Emergency exit locks, push bars etc"
           }
         }
       ]
@@ -474,7 +585,8 @@
         "title": "Denver Lock And Safe 24/7|Contact Now: 303-357-8311",
         "text": "Locksmith store in Denver 24/7 services. Expert solutions for locks & keys. 100% safe & secure from theft. Call Now: 303-357-8311 for quick he\nDenver Lock And Safe - Lock Opening\nIn an age where security is imparted utmost importance, the traditional lock and key systems have also evolved to comply with the modern requirements. While the conventional variants still exist, the prevalence of sophisticated versions, including electronic locks, high-security options, among others, has managed to transform our security infrastructure for the better. To install, repair, or maintain components of such complexity, you need experts who\u00e2ve got in-depth knowledge on the latest advancements in the industry. That\u00e2s where we, at Denver Lock And Safe, can help you.\nWe strive to stay ahead of the innovation curve and redefine the boundaries of excellence. From providing clients in Denver, CO area with advanced locking options to catering to other basic needs such as key cutting, lock repairs, maintenance work, we operate an all-inclusive service. Our solutions extend to clients from automotive, residential and commercial sector, with specialists designated to cater to specific domains. Our relentless pursuit for excellence and limitless passion for the profession has enabled us to grow into one of the leading locksmith firms in the region.\nWe provide:\nAutomotive locksmith services:\nFacing a problem with your car\u00e2s ignition? Do you require a new transponder key? We\u00e2ve got a team of seasoned auto locksmiths who can cater to your varied requirements with deftness. Trained to handle a wide range of car locks, advanced methods of key cutting, door unlocking and more, there\u00e2s no job that\u00e2s too challenging for our technicians. Some of our services include:\n- Transponder key programming\n- Trunk unlock\n- Car lockout solutions\n- Ignition repairs\n- Key fob replacement\nResidential locksmith services:\nHomes have special locksmithing needs \u00e2 needs that could only be fulfilled by a locksmith who\u00e2s trained to deal with such concerns. Our residential locksmiths provide unmatched service. Be it simple key cutting or home security audits, they carry out every job with perfection and in the shortest turnaround time. Some of our top services include:\n- New lock installation\n- Lock repairs/rekeying\n- Eviction locksmith service\n- All types of keys made\n- Home security advice\nCommercial locksmith services:\nWith businesses focusing on bolstering their security level, the insight of our commercial locksmiths proves to be valuable. With extensive experience and knowledge of the latest advancements in the industry, we know what it takes to secure your premises from all quarters. Apart from this, we also provide other standardized locksmith services, such as:\n- Safe installation/unlock\n- High-security lock installation\n- Emergency exit lock set up\n- Overnight lock change\n- Master and sub-master key system\nEmergency locksmith services:\nWhen emergency strikes, they do so without warning. You might be caught completely off-guard and end up taking drastic measures. Before you do that, ring up our helpline for assistance! We\u00e2re open 24/7 and run emergency response operations. Be it a car lockout or an urgent need for repairs, we can deal with your request in a prompt manner.\u00c2 Here\u00e2s an overview of our services:\n- Car/home/office lockout\n- Trunk unlocking\n- Emergency key making\n- Emergency eviction service\n- Post burglary damage repairs\nWe provide high-end products and services\nAt Denver Lock And Safe, we\u00e2ve always laid an emphasis on quality. To be the best, we need to deliver the best of products and services. To fulfill our aim, we\u00e2ve managed to refine our techniques, improve continuously and upgrade our infrastructure. This includes setting up periodic training sessions for our technicians, upgrading our knowledge base, updating the equipment we use, and expansion of our network. We also source all our parts, locks, key blanks and other components from top manufacturers in the industry to ensure the finest quality. Any product you acquire from us will be of top grade and any service you avail from us will be carried out with the best workmanship.\nAnytime, anywhere service\nWhat good is a locksmith that isn\u00e2t available when a customer is in dire need of help? When an emergency lockout grips your business facility or your house is burgled, there\u00e2s no room for delays; help must be provided right away. And that\u00e2s what we strive to achieve. Time or distance constraints have never held us back, and we\u00e2ve challenged ourselves to go that extra mile and provide services to customers as and when they\u00e2re required 24/7. Thanks to our mobile modus operandi, we\u00e2re able to reach any location in Denver, CO area in minimal time.\u00c2 No matter where you are, our mobile vans won\u00e2t take more than 15-20 minutes to reach your location.\nDenver Lock And Safe commenced operations in Denver, CO area with an aim to render unparalleled lock & key services. An ambition that began on a small scale, has now grown in magnitude and reach, thanks to the dedication and commitment we\u00e2ve shown. Today, we\u00e2ve managed to make our way to the top and emerge as the community\u00e2s most sought-after locksmith. Driven by a thirst for excellence, a passion for innovation, and the desire to make a difference, we sought to bring about a change when there was none. We provided quality, when all that existed was sub-par services. We brought in mobile service, when most locksmiths preferred working from stationary workshops. We extended our hours of operation and worked round-the-clock, when others stuck to standard hours. Through our relentless efforts, and constant endeavors, we\u00e2ve managed to carve a unique identity for ourselves.\nWhy choose us?\n- Trained locksmiths: \u00c2 We don\u00e2t just hire anyone; we hire only the best. From education, to experience, we ensure that only the finest make the cut. Once they\u00e2ve joined our crew, they undergo extensive training to comply with our high standards.\n-",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:43:37+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:53:28+00:00",
         "error": ""
       },
       {
@@ -484,7 +596,8 @@
         "title": "Commercial Locksmith in Denver|Call Now: 303-357-8311.",
         "text": "Commercial locksmith store in Denver Expert locksmith service for all office door. 100% safe and secure. Contact at 303-357-8311 for quick help and se\nCommercial Locksmith Service Around Me | Denver, CO | Denver Lock And Safe\nWhat defines security? You might instantly think of state-of-the-art security systems, alarms, motion-sensors and more, but before that, let\u00e2s start with the basics: the locks. When the foundation isn\u00e2t strong, everything you built upon it would only topple. That\u00e2s why we always recommend businesses to get their basics right before investing in over-the-top, expensive security systems. The smallest weak link in the security framework can jeopardize it all. You need expert insight from commercial locksmiths who can identify the potential flaws and set up adequate measures to strengthen your security framework. We can help you with that!\nSeasoned commercial locksmiths:\nAll-time availability:\nOur services include:\n- Commercial lockout help\n- Business security solutions\n- Lock repairs/maintenance work\n- Key cutting service\n- Hierarchical master key system\n- Upgrading door hardware\n- Securing all entry points\n- Keyless entry solutions\n- Emergency exit locks, push bars etc\n- Digital keypad locks\n- Sturdy safe installation\n- Overnight locksmith work\n- Contractual inspection provided\n- File cabinet locks\nFor all your commercial locksmithing problems, there is but one solution \u00e2 Denver Lock And Safe. Hire us today!",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:43:37+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:53:28+00:00",
         "error": ""
       },
       {
@@ -494,7 +607,8 @@
         "title": "Residential Locksmith in Denver|Call Now: 303-357-8311",
         "text": "Residential Locksmith store in Denver. Get trusted store s for home's security. Residential locksmith specialist is here. 100% safe. Call Now: 303-357\nResidential Fast Locksmith - Denver, CO - Denver Lock And Safe\nFree home security consultation:\nAlways on time:\nOnsite solutions provided:\nSome of our services include:\n- Lock repairs\n- Rekeying of locks\n- Eviction services\n- Home lockout service\n- Recommendations on new locks\n- Garage door locks\n- Quick door unlocking\n- Master key setup\n- Missing key replacement\n- Damaged door repairs/replacement\n- Mailbox locks, window locks etc\n- Advanced high-security locks\n- Deadbolt installation\n- Chain locks\n- Peephole installation\nAnd more",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:43:37+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:53:28+00:00",
         "error": ""
       },
       {
@@ -504,21 +618,22 @@
         "title": "Commercial Locksmith: Combat Lockout Productivity Loss",
         "text": "Learn how a commercial locksmith can help offset productivity losses from lockouts. Discover effective strategies to keep your business running smooth\nDenver Lock And Safe\nDenver, CO 80222\nCall us:\n303-357-8311\nToggle navigation\nCommercial\nResidential\nAutomotive\nEmergency\nCoupons\nTerms And Conditions\nPrice List\nBlog\nLocal Mobile Locksmith\nEmergency Locksmith Services\nLocal Locksmith Service\nLock Repair Services\nLocksmith 24 Hour Service\nLocksmith Mobile Service\nLocksmith Near Me\nNearest Locksmith\nApartment lockout\nProfessional Locksmith\nTrusted Locksmith\nUnlock Service\n24 Hour Lock Out Service\n24/7 Emergency Locksmith\nAutomotive lockout\nAutomotive locksmith\nBest locksmith\nCar lockout\nCommercial lockout\nCommercial locksmith\nDeadbolt locks\nEmergency locksmith\nLock change\nLock out\nLocks rekeyed\nResidential locksmith\nLocksmith on Speed Dial\nHiring a Mobile Locksmith\nLocal Locksmiths Respond Faster\nTop Reasons to Choose Us\n24-Hour Locksmith: What to Expect\nWhat Emergency Locksmiths Do\n24/7 Locksmiths for Lockouts\n24-Hour Locksmiths on Holidays\nFast & Reliable Lockout Service\nCar Lockouts? Trust\nFast Office Lockout Help\nWhy Call a Pro for Business Lockouts\n10 Key Locksmith Services\nBest Locksmith Claims: The Truth\nLocksmith Emergencies\nWhy Rekey Locks When Moving?\nHow to offset loss of productivity due to commercial lockouts\nMeet Denver Lock And Safe , a reliable commercial locksmith partner\ntop\nCall",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:43:37+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:53:28+00:00",
         "error": ""
       }
     ],
     "candidates": [],
     "model": "gemini-3.8-flash",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:47:22+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:56:12+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 8,
-    "brief_id": 49,
+    "brief_id": 16,
     "raw_input": "Green Leaf Lawn Care \u2013 Columbus OH",
     "company_name": "Green Leaf Lawn Care",
     "location": "Columbus, OH",
@@ -526,7 +641,7 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
@@ -541,38 +656,18 @@
           "name in title 75%",
           "mentions Columbus"
         ]
-      },
-      {
-        "url": "https://greenlawnohio.com/",
-        "title": "Lawn and Landscape Columbus Central Ohio - (614) 905-7314 | greenlawn ...",
-        "score": 0.6,
-        "reasons": [
-          "name in domain 50%",
-          "name in title 50%",
-          "mentions Columbus"
-        ]
-      },
-      {
-        "url": "https://nexgreen.com/",
-        "title": "LAWN CARE SERVICES IN COLUMBUS, OH - Nexgreen",
-        "score": 0.57,
-        "reasons": [
-          "name in domain 25%",
-          "name in title 75%",
-          "mentions Columbus"
-        ]
       }
     ],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:47:25+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:26:49+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 9,
-    "brief_id": 53,
+    "brief_id": 17,
     "raw_input": "https://www.redtruckbakery.com",
     "company_name": "",
     "location": "",
@@ -583,7 +678,7 @@
     "error_message": "",
     "draft": {
       "company_overview": {
-        "text": "The Classic Catering People is a full-service catering company based in Baltimore that provides catering and event services for corporate gatherings, weddings, galas, and celebrations.",
+        "text": "The Classic Catering People is a Baltimore-based full-service catering company that organizes and caters both private and corporate events, providing culinary offerings and event management services.",
         "evidence": [
           {
             "source_url": "https://www.classiccatering.com/full-service-events/",
@@ -592,7 +687,7 @@
         ]
       },
       "core_offering": {
-        "text": "They offer full-service catering, event flow planning, rental and linen coordination, service staff, and corporate drop-off menus through Classic to Go.",
+        "text": "The company offers full-service event catering, corporate menus, and event coordination, including the provision and coordination of rentals, linens, table settings, service staff, and overall event flow.",
         "evidence": [
           {
             "source_url": "https://www.classiccatering.com/full-service-events/",
@@ -601,7 +696,7 @@
         ]
       },
       "target_audience": {
-        "text": "Their audience includes corporate clients such as large corporations, startups, and government contractors, as well as nonprofit organizations and private event hosts.",
+        "text": "The company caters to both private clients for weddings and celebrations and commercial organizations, including large corporations, small startups, government contractors, and creative hubs.",
         "evidence": [
           {
             "source_url": "https://www.classiccatering.com/full-service-events/corporate/",
@@ -611,7 +706,7 @@
       },
       "b2b_qualification": {
         "decision": "Yes",
-        "rationale": "The business provides dedicated corporate catering services and menus to companies ranging from small startups to large corporations and government contractors.",
+        "rationale": "The company explicitly provides corporate catering services to organizations including startups, large corporations, and government contractors for business events and workplace dining.",
         "evidence": [
           {
             "source_url": "https://www.classiccatering.com/full-service-events/corporate/",
@@ -621,24 +716,24 @@
       },
       "discovery_questions": [
         {
-          "question": "How are you currently managing the coordination of rentals, linens, and staffing alongside menu production for your full-service corporate events?",
+          "question": "How do you tailor your catering services and menu planning across the diverse range of corporate events you handle, from casual Friday happy hours to formal black tie banquets?",
+          "based_on": {
+            "source_url": "https://www.classiccatering.com/full-service-events/corporate/",
+            "quote": "From Friday happy hours to black tie banquets, we orchestrate corporate events that celebrate all occasions and achievements while satisfying the tastes of the entire team."
+          }
+        },
+        {
+          "question": "What operational bottlenecks do you experience when coordinating external event logistics like rentals, linens, and service staff for large full-service events?",
           "based_on": {
             "source_url": "https://www.classiccatering.com/full-service-events/",
             "quote": "In addition to the food itself, we can assist with coordinating rentals, linens, table settings, service staff, and overall event flow."
           }
         },
         {
-          "question": "What challenges do you face when fulfilling online and call-in orders for your corporate lunch offerings during peak business cycles?",
+          "question": "How has client demand evolved for your drop-off corporate menus aimed at workplace milestones such as big pitches, wins, and new hires?",
           "based_on": {
             "source_url": "https://www.classiccatering.com/classic-to-go/corporate-menus/",
-            "quote": "Big pitches, business wins, holidays, new hires and retirements. We have options for every occasion. Call us or place your order online."
-          }
-        },
-        {
-          "question": "How do client expectations and event coordination requirements differ when you serve government contractors compared to startups and creative hubs?",
-          "based_on": {
-            "source_url": "https://www.classiccatering.com/full-service-events/corporate/",
-            "quote": "Large corporations, small startups, government contractors, creative hubs, we\u2019ve worked with all of them, and they have all enjoyed mixing business and pleasure with us."
+            "quote": "Big pitches, business wins, holidays, new hires and retirements. We have options for every occasion."
           }
         }
       ]
@@ -659,7 +754,8 @@
         "title": "The Classic Catering People \u2013 The Classic Catering People",
         "text": "The Classic Catering People \u2013 The Classic Catering People\nWeddings &\nCelebrations\nClassic to Go\nWe\u2019re your\ncatering\nwedding\nparty\npicnic\ngala\npeople\nOur Story\nWhen we have an occasion that must be perfect, we call Classic. The food is always excellent and the service \u2013 from account managers to delivery drivers to servers \u2013 is outstanding. Big events to small, we\u2019ve depended on Classic for 26 years and counting.\n\u2013 K. Segall\nMenus\nVenues\nGallery\nWhat people are saying\nWeddings\nSporting Events\nGalas\nCatering\nWeddings\nSporting Events\nGalas\nCatering\nTheClassicCateringPeople\nProud to be\nContact us for your next event.\nContact Classic",
         "method": "bs4_fallback",
-        "fetched_at": "2026-10-23T08:47:33+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:27:00+00:00",
         "error": ""
       },
       {
@@ -669,7 +765,8 @@
         "title": "Corporate \u2013 The Classic Catering People",
         "text": "Corporate \u2013 The Classic Catering People\nCorporate\nEnjoy The Company\nFrom Friday happy hours to black tie banquets, we orchestrate corporate events that celebrate all occasions and achievements while satisfying the tastes of the entire team. Large corporations, small startups, government contractors, creative hubs, we\u2019ve worked with all of them, and they have all enjoyed mixing business and pleasure with us.\nReady to start planning? Let\u2019s have a conversation >\nThank you! Classic for always making my events special and unique!\n\u2013 M. Collins\nGet in touch for your best day ever.",
         "method": "bs4_fallback",
-        "fetched_at": "2026-10-23T08:47:33+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:27:00+00:00",
         "error": ""
       },
       {
@@ -679,7 +776,8 @@
         "title": "Corporate Menus \u2013 The Classic Catering People",
         "text": "Give Lunch a Promotion\nBig pitches, business wins, holidays, new hires and retirements. We have options for every occasion. Call us or place your order online.\nCorporate Menus\nTrick or Turkey\nView our Seasonal Menus",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:47:33+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:27:00+00:00",
         "error": ""
       },
       {
@@ -689,21 +787,22 @@
         "title": "Full Service Events \u2013 The Classic Catering People",
         "text": "At Your Service\nEverything about event catering excites us. You bring a vision, and The Classic Catering People bring it to life in a thoughtful and organized way. As a Full Service catering company in Baltimore, we partner with clients to create events that feel effortless and well executed from start to finish.\nFrom corporate meetings and nonprofit galas to milestone celebrations and private parties, our chefs develop menus tailored to the occasion while our team manages the details that make an event run smoothly. In addition to the food itself, we can assist with coordinating rentals, linens, table settings, service staff, and overall event flow.\nThe result is an event that allows you to move through the day with confidence, enjoying the experience alongside your guests.",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:47:33+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:27:00+00:00",
         "error": ""
       }
     ],
     "candidates": [],
     "model": "gemini-3.8-flash",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:49:47+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:30:46+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 10,
-    "brief_id": 54,
+    "brief_id": 18,
     "raw_input": "Blue Ridge HVAC Services \u2013 Roanoke VA",
     "company_name": "Blue Ridge HVAC Services",
     "location": "Roanoke, VA",
@@ -711,7 +810,7 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
@@ -719,7 +818,17 @@
     "candidates": [
       {
         "url": "https://blueridgeheatingandair.com/",
-        "title": "Blue Ridge Heating & Air | AC Repair | Blacksburg, Roanoke ...",
+        "title": "Roanoke, Blacksburg, Christiansburg - Blue Ridge Heating & Air",
+        "score": 0.73,
+        "reasons": [
+          "name in domain 67%",
+          "name in title 67%",
+          "mentions Roanoke"
+        ]
+      },
+      {
+        "url": "https://www.blueridgeproservices.com/",
+        "title": "Blue Ridge Pro Services Copper Hill, VA",
         "score": 0.73,
         "reasons": [
           "name in domain 67%",
@@ -735,28 +844,18 @@
           "name in domain 67%",
           "name in title 67%"
         ]
-      },
-      {
-        "url": "https://botw.org/",
-        "title": "Blue Ridge Heating & Air near Christiansburg, VA 24073 | Blue ...",
-        "score": 0.43,
-        "reasons": [
-          "name in domain 0%",
-          "name in title 67%",
-          "mentions Roanoke"
-        ]
       }
     ],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:49:54+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:30:48+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 11,
-    "brief_id": 55,
+    "brief_id": 19,
     "raw_input": "Acme Roofing & Construction \u2013 Dallas TX",
     "company_name": "Acme Roofing & Construction",
     "location": "Dallas, TX",
@@ -764,7 +863,7 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
@@ -772,7 +871,7 @@
     "candidates": [
       {
         "url": "https://acmeroofsystems.com/",
-        "title": "DFW Roofing Company in North Richland Hills, TX | Acme Roof Systems",
+        "title": "DFW Roofing Company in North Richland Hills, TX | Acme Roof ...",
         "score": 0.58,
         "reasons": [
           "name in domain 33%",
@@ -782,15 +881,15 @@
       }
     ],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:50:01+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:30:53+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 12,
-    "brief_id": 50,
+    "brief_id": 20,
     "raw_input": "https://www.bostonplumbing.com",
     "company_name": "",
     "location": "",
@@ -805,15 +904,15 @@
     "pages": [],
     "candidates": [],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:48:50+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:34:00+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 13,
-    "brief_id": 51,
+    "brief_id": 21,
     "raw_input": "Pacific Northwest Tree Care \u2013 Portland OR",
     "company_name": "Pacific Northwest Tree Care",
     "location": "Portland, OR",
@@ -821,7 +920,7 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
@@ -838,26 +937,35 @@
         ]
       },
       {
-        "url": "https://www.portlandoregonarborist.com/",
-        "title": "Tree Services - Pacific Northwest Arborist",
+        "url": "https://www.whereorg.com/",
+        "title": "Pacific Nw Tree Care LLC, Portland, OR - - Arborists - WhereOrg",
         "score": 0.46,
         "reasons": [
           "name in domain 0%",
           "name in title 75%",
           "mentions Portland"
         ]
+      },
+      {
+        "url": "https://www.oregontreecare.us/",
+        "title": "Oregon Tree Care",
+        "score": 0.4,
+        "reasons": [
+          "name in domain 50%",
+          "name in title 50%"
+        ]
       }
     ],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:48:54+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:34:04+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 14,
-    "brief_id": 52,
+    "brief_id": 22,
     "raw_input": "Maple Street Auto Repair \u2013 Madison WI",
     "company_name": "Maple Street Auto Repair",
     "location": "Madison, WI",
@@ -865,22 +973,22 @@
     "status": "Website needed",
     "review_status": null,
     "error_code": "",
-    "error_message": "No website given. Confirm a suggested site or paste the URL in the Review tab.",
+    "error_message": "No website given. Web search found nothing clearly about this company. Confirm a suggested site or paste the official URL below.",
     "draft": null,
     "reviewed": null,
     "issues": [],
     "pages": [],
     "candidates": [],
     "model": "",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:49:03+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:34:11+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null
   },
   {
     "lead_id": 15,
-    "brief_id": 56,
+    "brief_id": 23,
     "raw_input": "https://www.piedmontmoving.com",
     "company_name": "",
     "location": "",
@@ -891,68 +999,86 @@
     "error_message": "",
     "draft": {
       "company_overview": {
-        "text": "Piedmont Moving Systems is a family-owned commercial moving and logistics company founded in 1981 and based in San Jose, California. The company operates under an ISO 9001:2015 certified quality management system, providing commercial transport, specialized logistics, and commercial warehouse storage from an 84,000-square-foot facility.",
+        "text": "Piedmont Moving Systems is a family-owned commercial moving and logistics provider founded in 1981 and based in San Jose, California. The company operates under an ISO 9001:2015 certified quality management system and manages an 84,000-square-foot facility providing storage and transport for high-value assets across the Bay Area.",
         "evidence": [
           {
             "source_url": "https://www.piedmontmoving.com/",
             "quote": "Since 1981, our family-owned business has been a trusted logistics partner for healthcare, biotech, and commercial teams throughout the Bay Area."
+          },
+          {
+            "source_url": "https://www.piedmontmoving.com/",
+            "quote": "Piedmont provides safe, monitored storage for medical equipment, lab gear, tech assets, and more in our 84,000 sq. ft. San Jose facility."
           }
         ]
       },
       "core_offering": {
-        "text": "The company provides commercial moving, corporate and office relocations, lab and data center moves, high-value asset transport, commercial warehouse storage with item-level tracking, cross-docking, white glove delivery, and equipment auction services.",
+        "text": "The company offers commercial moves, office and corporate relocations, data center and lab relocations, high-value specialized freight transport, and commercial warehouse storage. Its warehousing services include inventory management with item-level tracking, cross-docking, white-glove delivery, and commercial equipment auctions for facility closures.",
         "evidence": [
           {
             "source_url": "https://www.piedmontmoving.com/",
             "quote": "Piedmont Moving Systems specializes in commercial moves, lab and data center relocations, and secure warehouse storage in San Jose and the Bay Area."
+          },
+          {
+            "source_url": "https://www.piedmontmoving.com/storage",
+            "quote": "Cross-Docking Services to streamline inbound shipments and accelerate final delivery"
           }
         ]
       },
       "target_audience": {
-        "text": "Piedmont serves commercial and corporate clients across multiple industries, including healthcare, biotechnology and life sciences, high-tech, telecommunications, hospitality, retail, and industrial facilities.",
+        "text": "Piedmont Moving Systems serves businesses and commercial organizations in sectors such as healthcare, biotechnology/life sciences, high technology, telecommunications, hospitality (hotels), retail, and industrial facilities requiring specialized transport, project logistics, or commercial storage.",
         "evidence": [
           {
             "source_url": "https://www.piedmontmoving.com/storage",
             "quote": "Since 1981, we\u2019ve been the trusted storage partner for companies operating in healthcare, life sciences, and technology."
+          },
+          {
+            "source_url": "https://www.piedmontmoving.com/industry-solutions",
+            "quote": "As a leading San Jose logistics solutions company, we proudly serve the following industries:"
           }
         ]
       },
       "b2b_qualification": {
         "decision": "Yes",
-        "rationale": "Piedmont Moving Systems explicitly caters to businesses and commercial organizations, offering corporate relocations, industrial logistics, and business warehouse storage.",
+        "rationale": "Piedmont Moving Systems exclusively focuses on business and commercial clients, offering corporate office moves, lab and data center relocations, and commercial warehousing to sectors such as healthcare, tech, and hospitality.",
         "evidence": [
           {
-            "source_url": "https://www.piedmontmoving.com/",
-            "quote": "Piedmont Moving Systems specializes in commercial moves, lab and data center relocations, and secure warehouse storage in San Jose and the Bay Area."
+            "source_url": "https://www.piedmontmoving.com/commercial-movers",
+            "quote": "Trust San Jose commercial movers for office relocation, corporate moving services, and commercial storage units."
           }
         ]
       },
       "discovery_questions": [
         {
-          "question": "How are your teams currently handling the operational risks and downtime constraints associated with relocating sensitive IT infrastructure and data center equipment?",
+          "question": "How do your dedicated move coordinators manage risk and minimize business downtime when handling sensitive IT infrastructure during data center relocations?",
           "based_on": {
             "source_url": "https://www.piedmontmoving.com/commercial-movers",
             "quote": "We specialize in high-tech logistics and data center relocations, providing secure, climate-controlled moves for sensitive IT infrastructure and tech equipment, minimizing business disruption."
           }
         },
         {
-          "question": "What workflow challenges do you encounter when managing cross-docking and inventory tracking for inbound project materials or shipments?",
+          "question": "How does your ISO 9001:2015 certified quality management system influence your documented handling and tracking procedures for biotech and healthcare equipment?",
           "based_on": {
             "source_url": "https://www.piedmontmoving.com/storage",
-            "quote": "Cross-Docking Services to streamline inbound shipments and accelerate final delivery"
+            "quote": "Piedmont Moving Systems operates under an ISO 9001:2015 certified quality management system, ensuring documented procedures for asset handling, inventory tracking, and storage operations."
           }
         },
         {
-          "question": "How do you currently coordinate with hospitals and clinics when transporting and placing specialized heavy equipment like MRIs or X-ray machines into active medical spaces?",
+          "question": "When corporate clients decommission an office or facility, how do you typically integrate your equipment auction services alongside your moving and storage operations?",
           "based_on": {
-            "source_url": "https://www.piedmontmoving.com/industry-solutions",
-            "quote": "Whether you need an MRI moved to the fifth floor of your building or an X-Ray machine wheeled in through the front door of your emergency room, our team will do it with ease."
+            "source_url": "https://www.piedmontmoving.com/storage",
+            "quote": "Closing an office or other facility? Rather than dispose of your used furniture and appliances, recoup some of their value through our convenient equipment auctions."
           }
         }
       ]
     },
     "reviewed": null,
-    "issues": [],
+    "issues": [
+      {
+        "field": "website",
+        "severity": "warning",
+        "message": "page was larger than 2,000,000 bytes; only the first part was read: https://www.piedmontmoving.com/"
+      }
+    ],
     "pages": [
       {
         "url": "https://www.piedmontmoving.com/",
@@ -961,7 +1087,8 @@
         "title": "Piedmont Moving Systems | San Jose Commercial Movers & Commercial Storage",
         "text": "Piedmont Moving Systems specializes in commercial moves, lab and data center relocations, and secure warehouse storage in San Jose and the Bay Area. Get expert movers for your business relocation and request your free quote today.\ntop of page\nSecure Commercial Storage in the Bay Area\nPiedmont provides safe, monitored storage for medical equipment, lab gear, tech assets, and more in our 84,000 sq. ft. San Jose facility.\nAbout Piedmont\nMoving Systems\nWe specialize in the secure storage and transportation of high-value customer assets. Since 1981, our family-owned business has been a trusted logistics partner for healthcare, biotech, and commercial teams throughout the Bay Area. Piedmont operates under an ISO 9001:2015 Certified quality management system, independently audited to ensure consistent processes and controlled execution.\nLogistics and Supply Chain Solutions\nLet us help you with your next Bay Area project!\nSee What Our\nCustomers Have to Say!\nPiedmont is a wonderful mover! They have been amazing to work with for my Commercial jobs. The service that they provide is very professional and they make the jobs go smooth. I love everyone at the warehouse!\nTasha C.\nOur company does many commercial projects with Piedmont. They are our go-to warehouse in the area. Excellent and timely communication with follow-through. They are committed to providing service that goes above and beyond!\nPure L.\nLove working with Piedmont! Whenever we have a project in this area, I know exactly who to call! They are great at responding to emails / calls. I know our customer's product is in good hands!\nLinda\nConnect With Us\nLet us help you with your next Bay Area project!\n800-886-6868\nOpen M-F (8am \u2013 5pm)\nSaturday by Appointment\n2071 Ringwood Avenue, Suite D\nSan Jose, CA 95131\nbottom of page",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:49:07+00:00",
+        "truncated": true,
+        "fetched_at": "2026-10-24T12:34:16+00:00",
         "error": ""
       },
       {
@@ -971,7 +1098,8 @@
         "title": "Tailored Industry Solutions for Commercial Moves | Piedmont Moving Systems",
         "text": "Piedmont offers industry-specific solutions for medical equipment movers, data center relocation services, and commercial storage. Get your free quote today!\nIndustry Solutions for San Jose and Beyond\nTrust the experts at Piedmont Moving Systems with your next specialized project! From lab relocation to distribution management of high-tech goods, our team has got you covered!\nSan Jose Industry Logistics Solutions\nWith decades of experience working with businesses across various industries, the San Jose movers at Piedmont Moving Systems have been helping companies with custom logistics solutions for years. Each of our dedicated moving specialists, drivers, and packers has a deep understanding of all the industries we serve\u2014from health care to tech. They all have years of experience and are fully prepared to move your equipment in a cost-effective manner that minimizes downtime.\nFrom computer servers to MRI equipment, the skilled crews at Piedmont have provided logistics solutions for it all. Regardless of what task you throw our way, we will be sure to blow your mind with smooth and seamless freight, transport and management solutions that are second to none. Additionally, we drug test all of our drivers to ensure they\u2019re safely operating their vehicles when hauling your expensive equipment. When choosing our professional San Jose movers to handle your specialized move, rest assured your items will arrive at their destination safely and on time.\nSan Jose Freight, Transport and Management Solutions\nAs a leading San Jose logistics solutions company, we proudly serve the following industries:\nHigh Tech: From a few computer servers to an entire data center, our skilled and experienced crews have what it takes to move your sensitive, high-tech equipment from point A to B.\nHealth Care: Whether you need an MRI moved to the fifth floor of your building or an X-Ray machine wheeled in through the front door of your emergency room, our team will do it with ease.\nTelecommunications: Need your telecommunications equipment warehoused or transported? We\u2019ve got you covered!\nLeased Equipment: If you\u2019re currently stressing yourself out over coordinating the transfer, storage and warehousing of leased equipment, save yourself the grief and let our professionals handle it.\nIndustrial: Our talented crews have the skill, training and resources necessary to handle the most heavy-duty industrial equipment.\nHospitality: Lobby furniture, HVAC equipment, linens- you name it! We are ready to transport or warehouse it.\nRetail: Need shelves or coolers transported to your new retail shop? Not a problem!\nOffice Equipment: We can provide industry solutions for all kinds of office equipment, including modular furniture, computers and file cabinets.\nIntermodal: If you need more than one transportation method for your logistics project, Piedmont Moving Systems can accommodate you.\nAdditionally, we will also warehouse your items for as long as you need. We offer short-and-long-term storage options in our spacious facilities. Fully secure against fire and theft with 24-hour surveillance and an advanced sprinkler system, this building is the perfect place to store your equipment.\nPiedmont Moving Systems is the San Jose logistics company you need to make logistics easy.\nTo learn more about our logistics management services, get in touch with us today by filling out our quick quote form to receive your FREE estimate or by giving us a call. We can go the extra mile and perform the services that other logistics companies aren't equipped for. Get in touch today to learn more about our logistics services.\nGetting Things from Point A to Point B is our Specialty\n- Healthcare Logistics\n- Transportation Services\n- Big Game Logistics\n- Medical Equipment Movers\n- Distribution Services\n- Specialty Logistics Services\n- Project Management Services\n- Restaurant Logistics\nPiedmont is always my go to when we are in need of storage and moving services in their area! Their staff is wonderful to work with from the moment product is received, while in storage and setting up the delivery!\nAlexis G.",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:49:07+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:34:16+00:00",
         "error": ""
       },
       {
@@ -981,7 +1109,8 @@
         "title": "Commercial Warehouse Storage in San Jose | Piedmont Moving Systems",
         "text": "Commercial warehouse storage in San Jose. 84,000 sq ft facility with pallet storage, inventory tracking, and ISO 9001:2015 certified quality processes for Bay Area businesses.\nCommercial Warehouse Storage in San Jose\nCommercial warehouse storage in San Jose requires more than empty warehouse space. Businesses storing equipment, palletized inventory, medical devices, or project materials need secure facilities, professional handling, and accurate inventory tracking.\nPiedmont Moving Systems provides commercial warehouse storage in San Jose from our 84,000-square-foot facility. Businesses across Silicon Valley rely on us to store high-value equipment, inbound shipments, project inventory, and sensitive assets safely and efficiently.\nWarehouse Storage Designed for Business Operations\nBusinesses storing high-value equipment or project inventory need secure facilities, controlled handling procedures, and reliable asset tracking. Piedmont Moving Systems provides commercial warehouse storage designed for sensitive equipment, inbound shipments, and operational inventory.\nSince 1981, we\u2019ve been the trusted storage partner for companies operating in healthcare, life sciences, and technology. Our 84,000-square-foot facility offers commercial warehouse storage in San Jose with tailored configurations for everything from fragile and sensitive lab equipment to custom-built prototypes, delivered with precise white-glove care. Whether your business needs a few months of pre-move storage or a more permanent solution for warehousing and logistics, our commercial storage team is ready to help you.\nOur warehousing and storage are perfect for:\n- Hotel Projects: Redesigning and refurnishing your hotel is a painless process with the full-service storage and delivery options provided by the pros at Piedmont.\n- Hospital Projects: Select the open or container storage options right for your needs as you relocate items within your medical facility by working with our expert coordinators.\n- Shipping and Distribution: With our fleet of state-of-the-art vehicles and highly trained crews, streamlining your supply chain is both stress-free and affordable.\nISO 9001:2015 Certified Quality Management\nPiedmont Moving Systems operates under an ISO 9001:2015 certified quality management system, ensuring documented procedures for asset handling, inventory tracking, and storage operations. For businesses storing high-value equipment or sensitive materials, this certification provides an additional layer of operational accountability and process control.\nCommercial Storage Features\n- Vaulted and Open Warehouse Storage Configurations for modular flexibility\n- Detailed Asset Tracking and Secure Handling Procedures for high-value asset protection\n- 24/7 Camera Surveillance and Fire & Theft Monitoring\n- Short-Term and Long-Term Commercial Storage Options\n- Inventory Management System With Item-Level Tracking\n- Dedicated Pickup and Delivery Services to eliminate handoff risk\n- Cross-Docking Services to streamline inbound shipments and accelerate final delivery\nFlexible and Cost-Effective Commercial Storage Solutions for Bay Area Businesses\nAt Piedmont Moving Systems, we provide secure commercial warehouse storage from our San Jose facility. Through our Mayflower Transit and UniGroup Logistics partnerships, we can also coordinate storage and distribution services nationwide when needed.\nAs a leader among commercial moving companies and storage providers, we offer full-service solutions for your business:\n- Commercial Storage: You can drop off your items at our facility or arrange for us to pick them up. We offer custom padding and wrapping and specialized vaulting, too.\n- Moving and Storage: If you need storage as part of an office move, we can provide just the storage alone or a more full-service moving and storage package. Our services are customized for you!\n- Equipment Auctions: Closing an office or other facility? Rather than dispose of your used furniture and appliances, recoup some of their value through our convenient equipment auctions.\nWhatever your needs, let Piedmont Moving handle it from start to finish.\nWhite Glove Services\nWe provide meticulous and comprehensive handling, ensuring your items are delivered, unpacked, and perfectly placed with exceptional care.\nCross Docking\nUse our San Jose warehouse as drop-off and pickup destination for your supply chain needs.\nInventory Management\nOur warehouse management system optimizes storage, tracks inventory in real-time, and ensures the efficient handling of your goods within our 85,000 square foot facility.\nBlanket Wrapped Services\nPiedmont Moving Systems spares trees and prevents the accumulation of trash with our blanket wrapped services.",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:49:08+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:34:16+00:00",
         "error": ""
       },
       {
@@ -991,14 +1120,15 @@
         "title": "San Jose Commercial Movers | Office, Data Center & Lab Moves",
         "text": "Trust San Jose commercial movers for office relocation, corporate moving services, and commercial storage units. Request a free quote from top movers today!\nSan Jose's Top Commercial Moving Partner\nMoving your business is an undoubtedly time-sensitive process. Nobody respects this fact more than the professional San Jose commercial movers at Piedmont Moving Systems. To accommodate your company\u2019s needs and minimize your downtime, we\u2019ll assign a dedicated Move Coordinator to your project \u2013 regardless of its size and specifications! Your Move Coordinator will be there throughout the entire process to assist you and your employees through every aspect of the relocation process. We promise to provide you with quality, comprehensive service that meets your needs and specifications, no matter how unique they may be. As a premier San Jose commercial moving company with over 40 years of experience, we have what it takes to deliver premier results \u2013 guaranteed!\nPiedmont Moving Systems operates under an ISO 9001:2015 Certification quality management system, ensuring structured planning, controlled execution, and continuous improvement across commercial relocation projects.\nOffice and Corporate Relocation Services\nWe manage every detail of corporate and office moves, ensuring that your teams and assets are relocated efficiently. Learn more about our project management services for large-scale moves.\nHigh-Tech and Data Center Relocations\nWe specialize in high-tech logistics and data center relocations, providing secure, climate-controlled moves for sensitive IT infrastructure and tech equipment, minimizing business disruption.\nHigh-Value Transport and Industry Solutions\nWe offer specialized high-value transport for sensitive equipment and tailored industry solutions for sectors like healthcare, tech, and industrial.\nContact us today for a free consultation and discover how Piedmont Moving Systems can streamline your warehousing, distribution, and delivery operations!",
         "method": "trafilatura",
-        "fetched_at": "2026-10-23T08:49:08+00:00",
+        "truncated": false,
+        "fetched_at": "2026-10-24T12:34:16+00:00",
         "error": ""
       }
     ],
     "candidates": [],
     "model": "gemini-3.8-flash",
-    "prompt_version": "2026-10-23.1",
-    "created_at": "2026-10-23T08:50:44+00:00",
+    "prompt_version": "2026-10-24.1",
+    "created_at": "2026-10-24T12:34:42+00:00",
     "reviewer": null,
     "review_notes": null,
     "reviewed_at": null

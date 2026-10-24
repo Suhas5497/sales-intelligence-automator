@@ -226,3 +226,46 @@ def test_hubspot_export_maps_brief_to_company_properties(site_fetcher):
     header, line = to_hubspot_csv(repo.latest()).splitlines()[:2]
     assert header.startswith("Company name,Company Domain Name,City,State/Region,Description")
     assert "lonestarroofing.com,Houston,TX," in line
+
+
+def test_similar_company_names_are_not_used_for_a_brief():
+    """Real search results from the assignment run: each is a different, similarly named business."""
+    from sia.discovery import snippet_pages
+    cases = [
+        ("Sunrise Plumbing & Drain Services", "Tampa, FL",
+         "Plumber in Tampa, FL | Sunrise Plumbing Team", "Sunrise Plumbing Team offers drain cleaning in Tampa."),
+        ("Green Leaf Lawn Care", "Columbus, OH",
+         "Greenleaf Lawns - Columbus, OH - Yelp", "At Greenleaf Lawns LLC, we take pride in lawn care services."),
+        ("Blue Ridge HVAC Services", "Roanoke, VA",
+         "Blue Ridge Heating & Air - Christiansburg, VA", "Serving the Roanoke Valley since 1989."),
+    ]
+    for name, location, title, body in cases:
+        pages = snippet_pages(lead(company_name=name, location=location),
+                              [{"href": "https://x.com/", "title": title, "body": body}])
+        assert pages == [], name
+
+
+def test_name_phrase_allows_small_spelling_differences():
+    from sia.discovery import name_pattern
+    assert name_pattern("Green Leaf Lawn Care").search("greenleaf lawn care of columbus")
+    assert name_pattern("Sunrise Plumbing & Drain Services").search("sunrise plumbing and drain, tampa")
+    assert name_pattern("Joe's Backyard Landscaping").search("joes backyard landscaping llc")
+
+
+def test_snippet_brief_that_states_nothing_is_dropped():
+    empty = snippet_draft()
+    for key in ("company_overview", "core_offering", "target_audience"):
+        empty[key] = {"text": "Not stated on the website", "evidence": []}
+    result = process_lead(lead(company_name="BrightPlay Turf", location="Chicago, IL"), FakeFetcher({}),
+                          FakeLLM(empty), SETTINGS, search=lambda q, n: TURF_RESULTS)
+    assert result.draft is None and "not clearly about this company" in result.error_message
+
+
+def test_export_names_url_only_leads_from_the_homepage_title():
+    from sia.export import company_name
+    row = {"company_name": "", "website": "https://www.springhilllandscaping.com/",
+           "pages": [{"title": "Home - King of the Hill"}]}
+    assert company_name(row) == "King of the Hill"
+    row = {"company_name": "", "website": "https://www.houstonroofingonline.com/",
+           "pages": [{"title": "Houston Roofing | Expert Roof Replacement & Repairs"}]}
+    assert company_name(row) == "Houston Roofing"

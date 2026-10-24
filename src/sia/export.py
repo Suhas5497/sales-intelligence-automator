@@ -5,7 +5,24 @@ from __future__ import annotations
 import csv
 import io
 import json
+import re
 from urllib.parse import urlparse
+
+
+def company_name(row: dict) -> str:
+    """Name from the input, else the homepage title segment that best matches the domain
+    ("Houston Roofing | Expert Roof Replacement" on houstonroofingonline.com -> "Houston Roofing")."""
+    if row.get("company_name"):
+        return row["company_name"]
+    pages = row.get("pages") or []
+    host = (urlparse(row.get("website") or "").hostname or "").removeprefix("www.")
+    segments = [s.strip() for s in re.split(r"\s[|–—-]\s|\|", pages[0].get("title", ""))] if pages else []
+    segments = [s for s in segments if s and s.lower() not in {"home", "welcome", "homepage"}]
+    if not segments:
+        return host or row.get("raw_input", "")
+    def overlap(segment):
+        return sum(w in host for w in re.findall(r"[a-z]{3,}", segment.lower()))
+    return max(segments, key=overlap)
 
 
 def flatten(row: dict) -> dict:
@@ -17,7 +34,7 @@ def flatten(row: dict) -> dict:
     sources = sorted({ev["source_url"] for part in brief.values() if isinstance(part, dict)
                       for ev in part.get("evidence", []) if isinstance(ev, dict) and ev.get("source_url")})
     return {
-        "company": row.get("company_name") or row.get("raw_input"),
+        "company": company_name(row),
         "location": row.get("location", ""),
         "website": row.get("website", ""),
         "status": row.get("effective_status", ""),

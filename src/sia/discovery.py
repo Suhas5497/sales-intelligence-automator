@@ -68,12 +68,28 @@ def suggest_websites(lead: Lead, search=None, max_results: int = 8, results: lis
     return sorted(ranked, key=lambda c: -c["score"])[:3]
 
 
+GENERIC_TAIL = {"services", "service", "inc", "llc", "co", "company", "group", "ltd"}
+
+
+def name_pattern(name: str) -> re.Pattern | None:
+    """The company name as a phrase: its words in order, allowing punctuation, "and"/"&" and a missing space
+    between them ("Green Leaf" matches "GreenLeaf"), and an optional generic ending such as "Services".
+    "Sunrise Plumbing Team" therefore does not match "Sunrise Plumbing & Drain Services"."""
+    words = re.findall(r"[a-z0-9]+", name.lower().replace("'", ""))
+    words = [w for w in words if w != "and"]
+    while len(words) > 1 and words[-1] in GENERIC_TAIL:
+        words.pop()
+    if not words:
+        return None
+    return re.compile(r"\b" + r"[\W_]*(?:and\W+)?".join(map(re.escape, words)) + r"\b")
+
+
 def snippet_pages(lead: Lead, results: list[dict], limit: int = 6) -> list[Page]:
-    """Search snippets that are clearly about this company: most name words present and, when a location is
-    known, the city mentioned. Directory listings (Yelp, BBB, ...) are allowed here because they describe the
-    business; anything that might be a different company is left out."""
-    tokens = name_tokens(lead.company_name)
-    if not tokens:
+    """Search snippets that are clearly about this company: the full company name appears as a phrase and,
+    when a location is known, the city is mentioned. Directory listings (Yelp, BBB, ...) are allowed here
+    because they describe the business; similar names and other cities are left out."""
+    pattern = name_pattern(lead.company_name)
+    if pattern is None:
         return []
     city = lead.location.split(",")[0].strip().lower()
     pages: dict[str, Page] = {}
@@ -81,8 +97,7 @@ def snippet_pages(lead: Lead, results: list[dict], limit: int = 6) -> list[Page]
         href, title, body = result.get("href", ""), result.get("title", ""), result.get("body", "")
         text = f"{title}. {body}".strip(". ")
         lower = text.lower().replace("'", "")
-        coverage = sum(t in lower for t in tokens) / len(tokens)
-        if not href.startswith("http") or coverage < 0.75 or (city and city not in lower) or href in pages:
+        if not href.startswith("http") or not pattern.search(lower) or (city and city not in lower) or href in pages:
             continue
         pages[href] = Page(url=href, final_url=href, title=title[:200], text=text, method="search_snippet")
     return list(pages.values())[:limit]

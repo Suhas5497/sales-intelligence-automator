@@ -15,7 +15,7 @@ GENERIC_QUESTIONS = re.compile(
     r"(biggest challenges?|what are your (goals|pain points)|tell me (more )?about your (business|company)|"
     r"how can we help|what keeps you up)", re.I)
 MIN_QUOTE_CHARS = 8
-NUMBER = re.compile(r"\d[\d,.]*\d|\d")
+NUMBER = re.compile(r"(?<!\w)\d(?:[\d,.]*\d)?(?!\w)")         # 2009, 84,000, 24/7; not the 2 in "B2B"
 FILLER = {"with", "from", "that", "this", "their", "they", "them", "also", "have", "which", "such", "other", "into",
           "including", "company", "companies", "provides", "provide", "offers", "offer", "services", "service",
           "based", "stated", "website", "across", "both", "well", "variety", "range"}
