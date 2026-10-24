@@ -16,7 +16,7 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from sia.config import Settings  # noqa: E402
-from sia.export import to_csv, to_json  # noqa: E402
+from sia.export import to_csv, to_hubspot_csv, to_json  # noqa: E402
 from sia.fetcher import Fetcher  # noqa: E402
 from sia.highlight import highlight  # noqa: E402
 from sia.ingestion import deduplicate, normalize_url, parse_csv, parse_text  # noqa: E402
@@ -148,8 +148,10 @@ with st.sidebar:
     st.markdown("### 🔎 Sales Intel")
     pages = ["Add leads", "Briefs", "Review queue", "Export"]
     labels = {"Review queue": f"Review queue · {to_review}" if to_review else "Review queue"}
-    state.page = st.radio("Navigate", pages, index=pages.index(state.page), label_visibility="collapsed",
-                          format_func=lambda p: labels.get(p, p))
+    # Buttons elsewhere ask for a page via "goto"; the radio owns state.page through its key.
+    if "goto" in state:
+        state.page = state.pop("goto")
+    st.radio("Navigate", pages, key="page", label_visibility="collapsed", format_func=lambda p: labels.get(p, p))
     st.divider()
     if llm:
         st.caption(f"LLM: **{settings.gemini_model}**")
@@ -201,7 +203,7 @@ def page_add_leads():
                          unsafe_allow_html=True)
         progress.progress(1.0, text="Done")
         if st.button("Open briefs", type="primary"):
-            state.page = "Briefs"
+            state.goto = "Briefs"
             st.rerun()
 
 
@@ -292,8 +294,11 @@ def detail(row: dict):
     status = row["effective_status"]
     b2b = brief["b2b_qualification"] if brief else None
     st.markdown(f"## {esc(name_of(row))}")
+    pages = row["pages"] or []
+    preliminary = bool(brief) and status == "Website needed"           # written from search snippets
+    unit = "search snippet" if preliminary else "page"
     meta = " · ".join(filter(None, [row["location"], host_of(row["website"]),
-                                    f"{len(row['pages'])} page{'s' if len(row['pages']) != 1 else ''} read" if row["pages"] else ""]))
+                                    f"{len(pages)} {unit}{'s' if len(pages) != 1 else ''} read" if pages else ""]))
     st.markdown(badge(status) + (f" &nbsp;{badge('B2B: ' + b2b['decision'])}" if b2b else "")
                 + f' &nbsp;<span class="sia-meta">{esc(meta)}</span>', unsafe_allow_html=True)
     st.write("")
@@ -313,6 +318,8 @@ def detail(row: dict):
 
     main, evidence = st.columns([3, 2], gap="large")
     with main:
+        if preliminary:
+            st.markdown("##### Preliminary brief · from web search")
         sections = [(label, brief[key]["text"]) for label, key in FIELDS]
         sections.append((f"B2B qualification: {b2b['decision']}", b2b["rationale"]))
         st.markdown('<div class="sia-brief">' + "".join(f'<span class="sia-sec"><span class="sia-lbl">{esc(l)}</span>'
@@ -336,7 +343,8 @@ def detail(row: dict):
             repo.save_review(row["brief_id"], Status.REJECTED.value, row["reviewed"], row["reviewer"] or "", row["review_notes"] or "")
             st.rerun()
         if c.button("Approve", key=f"a-{row['brief_id']}", type="primary", width="stretch",
-                    disabled=status == "Approved"):
+                    disabled=status == "Approved" or preliminary,
+                    help="Confirm the official website first" if preliminary else None):
             repo.save_review(row["brief_id"], Status.APPROVED.value, row["reviewed"], row["reviewer"] or "", row["review_notes"] or "")
             st.rerun()
         if state.get("editing") == row["brief_id"]:
@@ -350,7 +358,7 @@ def page_workspace(review_only: bool):
     if not rows:
         st.info("No results yet. Add leads and run the analysis first.")
         if st.button("Add leads", type="primary"):
-            state.page = "Add leads"
+            state.goto = "Add leads"
             st.rerun()
         return
     available = [f for f in FILTERS if counts[f] and (not review_only or f in NEEDS_ACTION)]
@@ -401,11 +409,14 @@ def page_export():
                 unsafe_allow_html=True)
     only = st.toggle("Approved briefs only", value=bool(approved))
     data = approved if only else rows
-    a, b, _ = st.columns([1, 1, 3])
+    a, b, c, _ = st.columns([1, 1, 1.3, 1.7])
     a.download_button("Download CSV", to_csv(data), "sales_briefs.csv", "text/csv", disabled=not data,
                       type="primary", width="stretch")
     b.download_button("Download JSON", to_json(data), "sales_briefs.json", "application/json", disabled=not data,
                       width="stretch")
+    c.download_button("HubSpot import CSV", to_hubspot_csv(data), "hubspot_companies.csv", "text/csv",
+                      disabled=not data, width="stretch",
+                      help="Company properties for HubSpot's import tool; the domain de-duplicates companies.")
     if data:
         st.dataframe(pd.DataFrame([{"Company": name_of(r), "Status": r["effective_status"],
                                     "B2B": (r["final"] or {}).get("b2b_qualification", {}).get("decision", "—")}

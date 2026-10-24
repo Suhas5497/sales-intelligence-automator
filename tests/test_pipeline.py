@@ -4,7 +4,7 @@ from sia.config import Settings
 from sia.models import Lead, Status
 from sia.pipeline import process_batch, process_lead
 from sia.repository import Repository
-from sia.export import to_csv, to_json
+from sia.export import to_csv, to_hubspot_csv, to_json
 
 SETTINGS = Settings(gemini_api_key="", db_path=":memory:")
 
@@ -39,11 +39,12 @@ def test_batch_continues_after_failures():
              lead(company_name="Lone Star Roofing", website=HOME, website_source="input")]
     search = lambda q, n: [{"href": "https://www.yelp.com/biz/acme", "title": "Acme Roofing - Yelp", "body": ""},
                            {"href": "https://acmeroofingdallas.com/services", "title": "Acme Roofing & Construction | Dallas TX", "body": "Dallas roofing"}]
-    results = process_batch(leads, fetcher, FakeLLM(good_draft()), SETTINGS, search=search)
+    results = process_batch(leads, fetcher, FakeLLM(good_draft(), good_draft()), SETTINGS, search=search)
     assert [r.status for r in results] == [Status.FETCH_FAILED, Status.WEBSITE_NEEDED,
                                            Status.INSUFFICIENT_CONTENT, Status.NEEDS_REVIEW]
     assert results[0].error_code == "DNS_NOT_RESOLVED"
     assert results[1].candidates[0]["url"] == "https://acmeroofingdallas.com/"     # directory site filtered out
+    assert results[1].draft is not None                                            # preliminary brief from snippets
     # the commercial page is missing from this site, so its citations cannot be verified
     assert results[3].draft.b2b_qualification.decision == "Insufficient evidence"
 
@@ -158,3 +159,70 @@ def test_confirming_a_website_that_is_already_saved_merges_leads():
     repo.save_result(LeadResult(lead=named, status=Status.READY), name_row["lead_id"])
     rows = repo.latest()
     assert len(rows) == 1 and rows[0]["company_name"] == "Lone Star Roofing"
+
+
+TURF_RESULTS = [
+    {"href": "https://www.yelp.com/biz/brightplay-turf-chicago",
+     "title": "BrightPlay Turf - Chicago, IL - Yelp",
+     "body": "BrightPlay Turf installs artificial turf for schools, parks and commercial properties in Chicago."},
+    {"href": "https://www.brightplayturf.com/", "title": "BrightPlay Turf | Artificial Turf Chicago",
+     "body": "BrightPlay Turf designs pet-friendly lawns and sports fields for homeowners and businesses in Chicago."},
+    {"href": "https://www.yelp.com/biz/brightplay-turf-austin", "title": "BrightPlay Turf - Austin, TX",
+     "body": "Artificial grass in Austin."},                                  # other city: never used
+]
+
+
+def snippet_draft():
+    ev = {"source_url": "https://www.yelp.com/biz/brightplay-turf-chicago",
+          "quote": "installs artificial turf for schools, parks and commercial properties in Chicago"}
+    ev2 = {"source_url": "https://www.brightplayturf.com/",
+           "quote": "designs pet-friendly lawns and sports fields for homeowners and businesses"}
+    return {
+        "company_overview": {"text": "Chicago company that installs artificial turf.", "evidence": [ev]},
+        "core_offering": {"text": "Artificial turf, pet-friendly lawns and sports fields.", "evidence": [ev2]},
+        "target_audience": {"text": "Schools, parks, commercial properties, homeowners and businesses.", "evidence": [ev, ev2]},
+        "b2b_qualification": {"decision": "Yes", "rationale": "Installs turf for schools and commercial properties.",
+                              "evidence": [ev]},
+        "discovery_questions": [
+            {"question": "Which share of your installs are schools and parks versus commercial properties?", "based_on": ev},
+            {"question": "How do you scope sports field projects compared with pet-friendly lawns?", "based_on": ev2},
+            {"question": "What do businesses ask about most before choosing artificial turf over sod?", "based_on": ev2},
+        ],
+    }
+
+
+def test_name_only_lead_gets_preliminary_brief_from_search():
+    llm = FakeLLM(snippet_draft())
+    result = process_lead(lead(company_name="BrightPlay Turf", location="Chicago, IL"), FakeFetcher({}), llm,
+                          SETTINGS, search=lambda q, n: TURF_RESULTS)
+    assert result.status == Status.WEBSITE_NEEDED                     # still needs a confirmed website
+    assert result.draft.b2b_qualification.decision == "Yes"
+    assert [p.method for p in result.pages] == ["search_snippet", "search_snippet"]   # Austin result dropped
+    assert "preliminary" in result.issues[0].message
+    assert result.candidates[0]["url"] == "https://www.brightplayturf.com/"
+
+
+def test_name_only_lead_without_matching_snippets_makes_no_brief():
+    llm = FakeLLM()
+    result = process_lead(lead(company_name="Maple Street Auto Repair", location="Madison, WI"), FakeFetcher({}),
+                          llm, SETTINGS, search=lambda q, n: TURF_RESULTS)
+    assert result.draft is None and llm.calls == 0
+    assert "found nothing clearly about this company" in result.error_message
+
+
+def test_search_prompt_warns_model_about_snippets():
+    from sia.discovery import snippet_pages
+    from sia.llm import build_prompt
+    turf = lead(company_name="BrightPlay Turf", location="Chicago, IL")
+    prompt = build_prompt(turf, snippet_pages(turf, TURF_RESULTS), SETTINGS.icp)
+    assert "web search result" in prompt and "Search result snippets:" in prompt
+
+
+def test_hubspot_export_maps_brief_to_company_properties(site_fetcher):
+    repo = Repository(":memory:")
+    result = process_lead(lead(company_name="Lone Star Roofing", location="Houston, TX, USA", website=HOME,
+                               website_source="input"), site_fetcher, FakeLLM(good_draft()), SETTINGS)
+    repo.save_result(result)
+    header, line = to_hubspot_csv(repo.latest()).splitlines()[:2]
+    assert header.startswith("Company name,Company Domain Name,City,State/Region,Description")
+    assert "lonestarroofing.com,Houston,TX," in line

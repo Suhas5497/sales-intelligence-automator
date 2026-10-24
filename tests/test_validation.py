@@ -67,3 +67,27 @@ def test_quote_cited_to_unfetched_url_is_corrected_to_real_page(site_fetcher):
     data["core_offering"]["evidence"] = [{"source_url": "https://evil.example/", "quote": "TPO, metal and flat roof systems"}]
     draft, _ = validate(BriefDraft.model_validate(data), pages(site_fetcher))
     assert draft.core_offering.evidence[0].source_url == HOME
+
+
+def test_invented_number_is_flagged_even_with_a_real_quote(site_fetcher):
+    data = good_draft()
+    data["company_overview"]["text"] = "Houston roofing contractor founded in 1987 with 250 employees."
+    draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert any("1987, 250" in i.message and i.severity == "error" for i in issues)
+    assert needs_review(draft, issues)
+
+
+def test_real_quote_that_does_not_support_the_claim_is_flagged(site_fetcher):
+    data = good_draft()
+    data["core_offering"]["text"] = "Cloud accounting software for dental clinics."
+    data["core_offering"]["evidence"] = [{"source_url": HOME, "quote": "TPO, metal and flat roof systems"}]
+    draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert any(i.field == "core_offering" and "shares no key words" in i.message for i in issues)
+    assert needs_review(draft, issues)
+
+
+def test_paraphrased_claim_with_matching_words_passes(site_fetcher):
+    data = good_draft()
+    data["core_offering"]["text"] = "Installs metal roofing and flat roofs."
+    draft, issues = validate(BriefDraft.model_validate(data), pages(site_fetcher))
+    assert not [i for i in issues if i.field == "core_offering"]

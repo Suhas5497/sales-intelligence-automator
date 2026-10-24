@@ -15,6 +15,10 @@ GENERIC_QUESTIONS = re.compile(
     r"(biggest challenges?|what are your (goals|pain points)|tell me (more )?about your (business|company)|"
     r"how can we help|what keeps you up)", re.I)
 MIN_QUOTE_CHARS = 8
+NUMBER = re.compile(r"\d[\d,.]*\d|\d")
+FILLER = {"with", "from", "that", "this", "their", "they", "them", "also", "have", "which", "such", "other", "into",
+          "including", "company", "companies", "provides", "provide", "offers", "offer", "services", "service",
+          "based", "stated", "website", "across", "both", "well", "variety", "range"}
 
 
 def normalize(text: str) -> str:
@@ -57,6 +61,30 @@ class EvidenceChecker:
         return False, [Issue(field=field, severity="error", message=f"quote not found in scraped text: '{ev.quote[:120]}'")]
 
 
+def _stems(text: str) -> set[str]:
+    """Content words cut to 4 letters, so roof/roofs/roofing or install/installs/installation match."""
+    return {w[:4] for w in re.findall(r"[a-z]{4,}", normalize(text)) if w not in FILLER}
+
+
+def support_issues(text: str, evidence: list[Evidence], field: str, all_text: str,
+                   overlap_severity: str = "error") -> list[Issue]:
+    """Second check, after each quote is proven to exist: does the evidence actually back the sentence?
+    Numbers (years, counts, prices) must appear on a fetched page, and the sentence must share key words
+    with its quotes. Catches a real quote attached to an overstated or invented claim."""
+    issues = []
+    invented = [n for n in NUMBER.findall(text) if n not in all_text]
+    if invented:
+        issues.append(Issue(field=field, severity="error",
+                            message=f"states {', '.join(invented)}, which does not appear on any fetched page"))
+    if evidence and not NOT_STATED.match(text.strip()):
+        quotes = set().union(*(_stems(ev.quote) for ev in evidence))
+        if _stems(text) and not _stems(text) & quotes:
+            issues.append(Issue(field=field, severity=overlap_severity,
+                                message="the quoted evidence shares no key words with this statement; "
+                                        "check that it really supports it"))
+    return issues
+
+
 def validate(draft: BriefDraft, pages: list[Page]) -> tuple[BriefDraft, list[Issue]]:
     """Return a possibly corrected copy of the draft and all issues found."""
     draft = draft.model_copy(deep=True)
@@ -72,6 +100,7 @@ def validate(draft: BriefDraft, pages: list[Page]) -> tuple[BriefDraft, list[Iss
             if ok:
                 grounded.append(ev)
         claim.evidence = grounded                       # keep only verified evidence
+        issues += support_issues(claim.text, grounded, name, checker.all_text)
         if NOT_STATED.match(claim.text.strip()):
             issues.append(Issue(field=name, severity="warning", message="not stated on the website"))
         elif not grounded:
@@ -80,6 +109,8 @@ def validate(draft: BriefDraft, pages: list[Page]) -> tuple[BriefDraft, list[Iss
     b2b = draft.b2b_qualification
     grounded = [ev for ev in b2b.evidence if _keep(checker, ev, "b2b_qualification", issues)]
     b2b.evidence = grounded
+    # the rationale is reasoning, not a copied fact, so low word overlap is only a warning there
+    issues += support_issues(b2b.rationale, grounded, "b2b_qualification", checker.all_text, "warning")
     if b2b.decision != "Insufficient evidence" and not grounded:
         issues.append(Issue(field="b2b_qualification", severity="error",
                             message=f"decision '{b2b.decision}' had no verified evidence; downgraded to 'Insufficient evidence'"))
@@ -110,6 +141,9 @@ def validate(draft: BriefDraft, pages: list[Page]) -> tuple[BriefDraft, list[Iss
         ok, found = checker.check(q.based_on, field)
         if not ok:
             issues.append(Issue(field=field, severity="error", message="question is not tied to verified website text"))
+        elif not _stems(text) & _stems(q.based_on.quote):
+            issues.append(Issue(field=field, severity="warning",
+                                message="question shares no key words with the text it is based on"))
         issues += [i for i in found if i.severity == "warning"]
     return draft, issues
 

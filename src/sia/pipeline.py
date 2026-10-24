@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 
 from .config import Settings
 from .crawler import crawl
-from .discovery import name_tokens, suggest_websites
+from .discovery import name_tokens, snippet_pages, suggest_websites, web_search
 from .fetcher import Fetcher, FetchError
 from .ingestion import is_reserved_host
 from .llm import LLMClient, LLMError, generate_brief
@@ -50,9 +50,7 @@ def process_lead(lead: Lead, fetcher: Fetcher, llm: LLMClient | None, settings: 
 
 def _process(lead, fetcher, llm, settings, search, use_search) -> LeadResult:
     if not lead.website:
-        candidates = suggest_websites(lead, search=search) if use_search else []
-        message = "No website given. Confirm a suggested site or paste the official URL below."
-        return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates, error_message=message)
+        return _research_by_name(lead, llm, settings, search, use_search)
 
     if is_reserved_host(lead.website):
         return _failed(lead, "RESERVED_DOMAIN", f"{lead.website} uses a reserved test domain that can never resolve",
@@ -85,6 +83,35 @@ def _process(lead, fetcher, llm, settings, search, use_search) -> LeadResult:
     issues += check_issues
     status = Status.NEEDS_REVIEW if needs_review(draft, issues) else Status.READY
     return LeadResult(lead=lead, status=status, pages=pages, draft=draft, issues=issues, model=llm.model)
+
+
+def _research_by_name(lead: Lead, llm, settings: Settings, search, use_search: bool) -> LeadResult:
+    """Name-only lead: suggest websites and, when search snippets clearly describe the company, write a
+    preliminary brief from them. It stays "Website needed" until a person confirms the official site,
+    which then produces the verified brief."""
+    results = web_search(lead, search) if use_search else []
+    candidates = suggest_websites(lead, results=results)
+    snippets = snippet_pages(lead, results)
+    ask = "Confirm a suggested site or paste the official URL below."
+    if not snippets:
+        searched = "Web search found nothing clearly about this company. " if use_search else ""
+        return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates,
+                          error_message=f"No website given. {searched}{ask}")
+    if llm is None:
+        return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates, pages=snippets,
+                          error_message=f"No website given. {ask}")
+    try:
+        draft = generate_brief(llm, lead, snippets, settings.icp)
+    except LLMError as exc:
+        return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, candidates=candidates, pages=snippets,
+                          error_code=exc.code, error_message=f"No website given. {ask}", model=llm.model)
+    draft, issues = validate(draft, snippets)
+    issues.insert(0, Issue(field="website", severity="warning",
+                           message=f"preliminary brief from {len(snippets)} web search snippet(s), not the company's website"))
+    return LeadResult(lead=lead, status=Status.WEBSITE_NEEDED, pages=snippets, draft=draft, issues=issues,
+                      candidates=candidates, model=llm.model,
+                      error_message=f"Preliminary brief from web search results, not the official website. {ask} "
+                                    "Confirming a site replaces this with a verified brief.")
 
 
 def _failed(lead: Lead, code: str, message: str, search, use_search: bool) -> LeadResult:

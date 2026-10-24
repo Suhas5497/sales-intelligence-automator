@@ -14,7 +14,7 @@ from .models import BriefDraft, Lead, Page
 
 log = logging.getLogger(__name__)
 
-PROMPT_VERSION = "2026-10-23.1"
+PROMPT_VERSION = "2026-10-24.1"
 
 SYSTEM_PROMPT = """You are a careful B2B sales researcher. You write short, factual pre-call briefs.
 
@@ -47,13 +47,23 @@ class LLMClient(Protocol):
     def generate(self, system: str, prompt: str, schema: dict) -> str: ...
 
 
+SEARCH_NOTE = """Note: no official website is confirmed for this lead. Each <page> below is a web search result
+snippet (title + summary), often from directories, not the company's own website. Apply every rule as if the
+snippets were the website text. Use only snippets that are clearly about this exact company (same name and
+location); ignore the rest. Snippets are short, so prefer "Not stated on the website" and "Insufficient
+evidence" over stretching thin text."""
+
+
 def build_prompt(lead: Lead, pages: list[Page], icp: str) -> str:
     known = {"Company name (from input)": lead.company_name, "Location (from input)": lead.location,
              "Description (from input)": lead.descriptor, "Website": lead.website}
     header = "\n".join(f"{k}: {v}" for k, v in known.items() if v)
     blocks = "\n\n".join(f'<page url="{p.final_url or p.url}" title="{p.title}">\n{p.text}\n</page>'
                          for p in pages if p.text)
-    return f"ICP (ideal customer profile):\n{icp}\n\nLead:\n{header}\n\nWebsite pages:\n{blocks}"
+    from_search = any(p.method == "search_snippet" for p in pages)
+    note = f"{SEARCH_NOTE}\n\n" if from_search else ""
+    label = "Search result snippets" if from_search else "Website pages"
+    return f"ICP (ideal customer profile):\n{icp}\n\nLead:\n{header}\n\n{note}{label}:\n{blocks}"
 
 
 def _parse(raw: str) -> BriefDraft:

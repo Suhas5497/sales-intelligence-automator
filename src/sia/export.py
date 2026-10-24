@@ -1,9 +1,11 @@
-"""CSV / JSON exports of the latest brief per lead (reviewer edits win over the generated draft)."""
+"""CSV / JSON exports of the latest brief per lead (reviewer edits win over the generated draft), plus a
+CRM import file laid out as HubSpot company properties."""
 from __future__ import annotations
 
 import csv
 import io
 import json
+from urllib.parse import urlparse
 
 
 def flatten(row: dict) -> dict:
@@ -34,8 +36,35 @@ def flatten(row: dict) -> dict:
     }
 
 
+# HubSpot's standard company properties first, then custom ones a CRM admin creates once (group "Sales brief").
+HUBSPOT_COLUMNS = {
+    "Company name": "company", "Company Domain Name": "domain", "City": "city", "State/Region": "state",
+    "Description": "company_overview", "Core offering": "core_offering", "Target audience": "target_audience",
+    "B2B fit": "b2b_decision", "B2B rationale": "b2b_rationale", "Discovery questions": "questions",
+    "Brief status": "status", "Brief evidence URLs": "evidence_urls", "Brief generated at": "generated_at",
+}
+
+
+def to_hubspot_row(row: dict) -> dict:
+    flat = flatten(row)
+    city, _, state = (flat["location"] or "").partition(",")
+    flat.update(domain=(urlparse(flat["website"]).hostname or "").removeprefix("www."), city=city.strip(),
+                state=state.strip().split(",")[0].strip(),
+                questions="\n".join(f"{i}. {q}" for i, q in enumerate(
+                    filter(None, [flat["question_1"], flat["question_2"], flat["question_3"]]), 1)))
+    return {column: flat[key] for column, key in HUBSPOT_COLUMNS.items()}
+
+
+def to_hubspot_csv(rows: list[dict]) -> str:
+    """Import file for HubSpot (Contacts > Companies > Import); the domain is the de-duplication key."""
+    return _write([to_hubspot_row(r) for r in rows])
+
+
 def to_csv(rows: list[dict]) -> str:
-    flat = [flatten(r) for r in rows]
+    return _write([flatten(r) for r in rows])
+
+
+def _write(flat: list[dict]) -> str:
     if not flat:
         return ""
     out = io.StringIO()
